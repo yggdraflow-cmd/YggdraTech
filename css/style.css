@@ -1,0 +1,2085 @@
+/* =========================================================
+   1. RESET GLOBAL
+   Remove estilos padrões do navegador
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   2. VARIÁVEIS GLOBAIS
+   Nova identidade visual Yggdra Tech
+========================================================= */
+
+:root {
+
+  /* CORES PRINCIPAIS */
+
+  --primary-color: #12b8d6;
+  --primary-hover: #0ea5c0;
+
+  /* FUNDOS */
+
+  --bg-body: #f8fafc;
+  --bg-section: #ffffff;
+  --bg-navbar: #081120;
+
+  /* TEXTOS */
+
+  --text-main: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+
+  /* BORDAS */
+
+  --border-color: #dbeafe;
+
+  /* SOMBRAS */
+
+  --shadow-sm:
+    0 4px 15px rgba(15, 23, 42, 0.05);
+
+  --shadow-md:
+    0 10px 30px rgba(15, 23, 42, 0.08);
+
+  --shadow-lg:
+    0 20px 40px rgba(15, 23, 42, 0.12);
+
+  /* TRANSIÇÕES */
+
+  --transition: all 0.3s ease;
+
+  /* CONTAINER */
+
+  --container-width: 1200px;
+}
+
+/* =========================================================
+   3. CONFIGURAÇÕES GERAIS DO SITE
+========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+
+  background: var(--bg-body);
+
+  color: var(--text-main);
+
+  line-height: 1.6;
+
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* LINKS */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* IMAGENS */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* LISTAS */
+
+ul {
+  list-style: none;
+}
+
+/* BOTÕES */
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+/* SEÇÕES */
+
+section {
+  width: 100%;
+}
+
+/* CONTAINER PADRÃO */
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+
+  margin: 0 auto;
+  padding: 0 20px;
+}/* =========================================================
+   4. NAVBAR GLOBAL
+========================================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 22px 60px;
+
+  background: rgba(8, 17, 32, 0.95);
+
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(18, 184, 214, 0.12);
+
+  z-index: 1000;
+}
+
+/* =========================================================
+   5. LOGO
+========================================================= */
+
+.logo-text {
+  font-size: 2rem;
+  font-weight: 700;
+
+  color: #ffffff;
+
+  transition: var(--transition);
+}
+
+.logo-text:hover {
+  color: var(--primary-color);
+}
+
+/* =========================================================
+   6. MENU DE NAVEGAÇÃO
+========================================================= */
+
+#main-nav {
+  display: flex;
+  align-items: center;
+}
+
+#main-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+#main-nav ul li a {
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  color: #e2e8f0;
+
+  transition: var(--transition);
+
+  position: relative;
+}
+
+/* LINHA ANIMADA */
+
+#main-nav ul li a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--primary-color);
+
+  transition: var(--transition);
+}
+
+#main-nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+#main-nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* =========================================================
+   7. BOTÃO CTA REMOVIDO
+   Mantido apenas para não quebrar páginas antigas
+========================================================= */
+
+.cta-btn {
+  display: none;
+}
+/* =========================================================
+   MENU MOBILE
+========================================================= */
+
+.hamburger-menu {
+  display: none;
+
+  font-size: 28px;
+
+  color: #ffffff;
+  background: transparent;
+
+  cursor: pointer;
+
+  z-index: 1003;
+}
+
+.nav-overlay {
+  display: none;
+}
+
+/* =========================================================
+   RESPONSIVO NAVBAR
+========================================================= */
+
+@media (max-width: 992px) {
+
+  .navbar {
+    padding: 20px;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  #main-nav {
+    position: fixed;
+
+    top: 0;
+    right: -100%;
+
+    width: 280px;
+    height: 100vh;
+
+    background: #081120;
+
+    transition: 0.4s ease;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1002;
+  }
+
+  #main-nav.active {
+    right: 0;
+  }
+
+  #main-nav ul {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .nav-overlay.active {
+    display: block;
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    z-index: 1001;
+  }
+}
+/* =========================================================
+   8. HERO DA HOME
+   Primeira dobra da página inicial
+========================================================= */
+
+.hero-section {
+  min-height: 85vh;
+  padding: 130px 20px 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      rgba(248, 250, 252, 0.42),
+      rgba(248, 250, 252, 0.58)
+    ),
+    url('../img/banner.jpg.png') center/cover no-repeat;
+}
+
+/* Camada suave para destacar o texto */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(18, 184, 214, 0.12),
+      transparent 55%
+    );
+
+  z-index: 1;
+}
+
+/* Deixa a imagem mais visível */
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(248, 250, 252, 0.05),
+      rgba(248, 250, 252, 0.42)
+    );
+
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Conteúdo principal */
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 920px;
+
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* Título */
+.hero-content h1 {
+  color: var(--text-main);
+
+  font-size: clamp(3.2rem, 8vw, 5.4rem);
+  font-weight: 700;
+  line-height: 1.05;
+
+  margin-bottom: 18px;
+}
+
+/* Slogan */
+.hero-content .slogan {
+  max-width: 760px;
+
+  margin: 0 auto 38px;
+
+  color: var(--text-secondary);
+
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  font-weight: 500;
+}
+
+/* =========================================================
+   9. BOTÃO PRINCIPAL DA HOME
+========================================================= */
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 30px;
+}
+
+.btn-card {
+  position: relative;
+
+  background: transparent;
+
+  padding: 0;
+  border-radius: 16px;
+}
+
+.btn-glow {
+  display: none;
+}
+
+.btn-card a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 38px;
+
+  border-radius: 16px;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-hover)
+  );
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  box-shadow:
+    0 12px 32px rgba(18, 184, 214, 0.28);
+
+  transition: var(--transition);
+}
+
+.btn-card a:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 42px rgba(18, 184, 214, 0.38);
+}/* =========================================================
+   10. SEÇÕES PADRÃO
+   Base usada em serviços, contato e páginas internas
+========================================================= */
+
+.services-section,
+.contact-section {
+  width: 100%;
+  max-width: var(--container-width);
+
+  margin: 0 auto;
+
+  padding: 100px 5%;
+
+  text-align: center;
+}
+
+.section-title {
+  margin-bottom: 20px;
+
+  color: var(--text-main);
+
+  font-size: clamp(2rem, 5vw, 2.8rem);
+}
+
+.section-title span {
+  color: var(--primary-color);
+}
+
+.intro-description {
+  max-width: 800px;
+
+  margin: 0 auto 60px;
+
+  color: var(--text-muted);
+
+  font-size: 1.1rem;
+}
+
+/* =========================================================
+   11. CARDS DE SERVIÇOS
+   Cards da página services.html
+========================================================= */
+
+.value-propositions {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.proposition-block {
+  width: 100%;
+
+  padding: 38px 32px;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: left;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+
+  box-shadow: var(--shadow-md);
+
+  overflow: hidden;
+
+  transition: var(--transition);
+}
+
+.proposition-block:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(18, 184, 214, 0.35);
+
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.12),
+    0 0 28px rgba(18, 184, 214, 0.14);
+}
+
+.service-icon {
+  margin-bottom: 20px;
+
+  color: var(--primary-color);
+
+  font-size: 2.4rem;
+}
+
+.proposition-block h3 {
+  margin-bottom: 14px;
+
+  color: var(--text-main);
+
+  font-size: clamp(1.25rem, 4vw, 1.55rem);
+}
+
+.proposition-block p {
+  color: var(--text-muted);
+
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* CARD CLICÁVEL */
+
+.clickable-card {
+  display: block;
+
+  color: inherit;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.clickable-card:hover {
+  color: inherit;
+}
+
+/* =========================================================
+   12. IMAGENS DENTRO DOS CARDS
+========================================================= */
+
+.card-image {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  border-radius: 14px;
+}
+/* =========================================================
+   13. HERO DA PÁGINA SERVIÇOS
+   Banner principal da services.html
+========================================================= */
+
+.services-hero {
+  min-height: 65vh;
+
+  padding: 140px 20px 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  position: relative;
+  overflow: hidden;
+
+  background: #081120;
+}
+
+/* IMAGEM DO HERO */
+
+.services-hero-bg {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  z-index: 1;
+}
+
+/* CAMADA ESCURA SOBRE A IMAGEM */
+
+.services-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(8, 17, 32, 0.68),
+      rgba(8, 17, 32, 0.78)
+    );
+
+  z-index: 2;
+}
+
+/* CONTEÚDO DO HERO */
+
+.services-hero-content {
+  position: relative;
+  z-index: 3;
+
+  max-width: 900px;
+}
+
+.services-hero-content h1 {
+  margin-bottom: 18px;
+
+  color: #ffffff;
+
+  font-size: clamp(3rem, 7vw, 5rem);
+  line-height: 1.05;
+}
+
+.services-hero-content h1 span {
+  color: var(--primary-color);
+}
+
+.services-hero-content p {
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  color: #cbd5e1;
+
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   14. TRANSIÇÃO ENTRE PÁGINAS
+   Efeito Loading / Glitch
+========================================================= */
+
+#page-transition {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #081120;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.4s ease;
+
+  z-index: 99999;
+}
+
+#page-transition.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.glitch {
+  position: relative;
+
+  color: #ffffff;
+
+  font-size: 2rem;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-glitch);
+
+  position: absolute;
+  inset: 0;
+}
+
+.glitch::before {
+  color: #00bcd4;
+
+  transform: translate(-2px, 0);
+
+  opacity: 0.8;
+}
+
+.glitch::after {
+  color: #12b8d6;
+
+  transform: translate(2px, 0);
+
+  opacity: 0.8;
+}/* =========================================================
+   15. PÁGINAS INTERNAS DE SERVIÇOS
+   Base visual para páginas específicas
+========================================================= */
+
+.direction-hero,
+.robust-hero,
+.performance-hero {
+  min-height: 85vh;
+
+  padding: 150px 5% 100px;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(18, 184, 214, 0.18),
+      transparent 38%
+    ),
+    linear-gradient(
+      135deg,
+      #081120,
+      #0f172a
+    );
+}
+
+.direction-hero-content,
+.robust-hero-content,
+.performance-hero-content {
+  max-width: 850px;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* BADGES DAS PÁGINAS */
+
+.direction-badge,
+.robust-badge,
+.performance-badge {
+  display: inline-block;
+
+  padding: 8px 18px;
+
+  border-radius: 999px;
+
+  background: rgba(18, 184, 214, 0.12);
+
+  border: 1px solid rgba(18, 184, 214, 0.35);
+
+  color: #67e8f9;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+/* TÍTULOS DOS HEROS INTERNOS */
+
+.direction-hero h1,
+.robust-hero h1,
+.performance-hero h1 {
+  margin-top: 28px;
+
+  color: #ffffff;
+
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  line-height: 1.05;
+}
+
+/* TEXTOS DOS HEROS INTERNOS */
+
+.direction-hero p,
+.robust-hero p,
+.performance-hero p {
+  max-width: 780px;
+
+  margin-top: 24px;
+
+  color: #cbd5e1;
+
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   16. BOTÕES DAS PÁGINAS INTERNAS
+========================================================= */
+
+.direction-buttons,
+.robust-buttons,
+.performance-buttons {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+
+  margin-top: 36px;
+}
+
+.direction-btn-primary,
+.robust-btn-primary,
+.performance-btn-primary,
+.direction-btn-secondary,
+.robust-btn-secondary,
+.performance-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 28px;
+
+  border-radius: 14px;
+
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: var(--transition);
+}
+
+/* BOTÃO PRINCIPAL */
+
+.direction-btn-primary,
+.robust-btn-primary,
+.performance-btn-primary {
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-hover)
+  );
+
+  box-shadow:
+    0 12px 32px rgba(18, 184, 214, 0.28);
+}
+
+.direction-btn-primary:hover,
+.robust-btn-primary:hover,
+.performance-btn-primary:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 42px rgba(18, 184, 214, 0.38);
+}
+
+/* BOTÃO SECUNDÁRIO */
+
+.direction-btn-secondary,
+.robust-btn-secondary,
+.performance-btn-secondary {
+  color: #67e8f9;
+
+  background: transparent;
+
+  border: 1px solid rgba(103, 232, 249, 0.4);
+}
+
+.direction-btn-secondary:hover,
+.robust-btn-secondary:hover,
+.performance-btn-secondary:hover {
+  background: rgba(103, 232, 249, 0.08);
+
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   17. SEÇÕES DAS PÁGINAS INTERNAS
+========================================================= */
+
+.direction-section,
+.robust-section,
+.performance-section {
+  padding: 100px 5%;
+
+  background: var(--bg-body);
+
+  color: var(--text-main);
+}
+
+.direction-dark,
+.robust-dark,
+.performance-dark {
+  background: #eef6f8;
+}
+
+.direction-section-header,
+.robust-section-header,
+.performance-section-header {
+  max-width: 880px;
+
+  margin: 0 auto 55px;
+
+  text-align: center;
+}
+
+.direction-section-header h2,
+.robust-section-header h2,
+.performance-section-header h2 {
+  color: var(--text-main);
+
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  line-height: 1.15;
+}
+
+.direction-section-header p,
+.robust-section-header p,
+.performance-section-header p {
+  margin-top: 18px;
+
+  color: var(--text-muted);
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   18. CARDS DAS PÁGINAS INTERNAS
+========================================================= */
+
+.direction-cards,
+.robust-cards,
+.performance-cards {
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 24px;
+}
+
+.direction-card,
+.robust-card,
+.performance-card {
+  padding: 32px 28px;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+
+  box-shadow: var(--shadow-md);
+
+  transition: var(--transition);
+}
+
+.direction-card:hover,
+.robust-card:hover,
+.performance-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(18, 184, 214, 0.35);
+
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.12),
+    0 0 28px rgba(18, 184, 214, 0.14);
+}
+
+.direction-card i,
+.robust-card i,
+.performance-card i {
+  margin-bottom: 22px;
+
+  color: var(--primary-color);
+
+  font-size: 2rem;
+}
+
+.direction-card h3,
+.robust-card h3,
+.performance-card h3 {
+  margin-bottom: 12px;
+
+  color: var(--text-main);
+
+  font-size: 1.25rem;
+}
+
+.direction-card p,
+.robust-card p,
+.performance-card p {
+  color: var(--text-muted);
+
+  font-size: 0.95rem;
+  line-height: 1.7;
+}/* =========================================================
+   19. LISTAS DAS PÁGINAS INTERNAS
+   Chips de análise, otimização e tecnologias
+========================================================= */
+
+.direction-grid,
+.performance-grid,
+.robust-tech-list,
+.performance-tech-list {
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.direction-grid div,
+.performance-grid div,
+.robust-tech-list span,
+.performance-tech-list span {
+  padding: 13px 22px;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(18, 184, 214, 0.18);
+
+  color: var(--text-main);
+
+  font-weight: 600;
+
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================================================
+   20. PASSO A PASSO DAS PÁGINAS INTERNAS
+========================================================= */
+
+.direction-steps,
+.robust-steps,
+.performance-steps {
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+  gap: 24px;
+}
+
+.direction-step,
+.robust-step,
+.performance-step {
+  padding: 32px 28px;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+
+  box-shadow: var(--shadow-md);
+
+  transition: var(--transition);
+}
+
+.direction-step:hover,
+.robust-step:hover,
+.performance-step:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(18, 184, 214, 0.35);
+
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.12),
+    0 0 28px rgba(18, 184, 214, 0.14);
+}
+
+.direction-step span,
+.robust-step span,
+.performance-step span {
+  color: var(--primary-color);
+
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.direction-step h3,
+.robust-step h3,
+.performance-step h3 {
+  margin: 14px 0 12px;
+
+  color: var(--text-main);
+}
+
+.direction-step p,
+.robust-step p,
+.performance-step p {
+  color: var(--text-muted);
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   21. CTA FINAL DAS PÁGINAS INTERNAS
+========================================================= */
+
+.direction-cta,
+.robust-cta,
+.performance-cta {
+  padding: 100px 5%;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(18, 184, 214, 0.14),
+      transparent 45%
+    ),
+    #081120;
+}
+
+.direction-cta h2,
+.robust-cta h2,
+.performance-cta h2 {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  color: #ffffff;
+
+  font-size: clamp(2rem, 4vw, 3.3rem);
+}
+
+.direction-cta p,
+.robust-cta p,
+.performance-cta p {
+  max-width: 760px;
+
+  margin: 22px auto 36px;
+
+  color: #cbd5e1;
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}/* =========================================================
+   22. CONTATO
+   Cards e métodos de contato
+========================================================= */
+
+.contact-methods {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 25px;
+}
+
+.contact-item {
+  padding: 32px 28px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+
+  text-align: center;
+
+  box-shadow: var(--shadow-md);
+
+  transition: var(--transition);
+}
+
+.contact-item:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(18, 184, 214, 0.35);
+
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.12),
+    0 0 28px rgba(18, 184, 214, 0.14);
+}
+
+.contact-icon {
+  margin-bottom: 16px;
+
+  color: var(--primary-color);
+
+  font-size: 2rem;
+}
+
+.contact-item a {
+  color: var(--primary-color);
+
+  font-weight: 700;
+
+  word-break: break-all;
+}
+/* =========================================================
+   23. PÁGINA QUEM SOMOS
+========================================================= */
+
+/* HERO */
+
+.about-hero {
+  min-height: 75vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 160px 20px 100px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero-content {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  position: relative;
+  z-index: 2;
+}
+
+.about-hero-content h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+
+  font-weight: 800;
+  line-height: 1.1;
+
+  margin-bottom: 25px;
+
+  color: #081120;
+}
+
+.about-hero-content p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+
+  max-width: 900px;
+  margin: 0 auto;
+
+  color: #334155;
+}
+
+/* BOTÃO */
+
+.about-hero-btn {
+  margin-top: 40px;
+}
+
+.about-hero-btn a {
+  display: inline-block;
+
+  padding: 18px 40px;
+
+  background: linear-gradient(
+    135deg,
+    #12b8d6,
+    #0ea5c6
+  );
+
+  color: #ffffff;
+
+  border-radius: 16px;
+
+  font-weight: 700;
+
+  transition: var(--transition);
+
+  box-shadow:
+    0 15px 30px rgba(18,184,214,.25);
+}
+
+.about-hero-btn a:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 20px 40px rgba(18,184,214,.35);
+}
+
+/* =========================================================
+   VÍDEO INSTITUCIONAL
+========================================================= */
+
+.about-video-section {
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding: 80px 20px;
+}
+
+.about-video-section h2 {
+  text-align: center;
+
+  font-size: 2.5rem;
+
+  margin-bottom: 40px;
+
+  color: #081120;
+}
+
+.about-video {
+  width: 100%;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 50px rgba(8,17,32,.12);
+}
+
+.about-video video {
+  width: 100%;
+
+  display: block;
+}
+/* =========================================================
+   REDES SOCIAIS
+========================================================= */
+
+.about-social-section {
+  padding: 90px 20px 100px;
+
+  text-align: center;
+
+  background: var(--bg-body);
+
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.about-social-section h2 {
+  font-size: 2.5rem;
+
+  margin-bottom: 40px;
+
+  color: #081120;
+}
+
+.social-card {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 18px;
+}
+
+.socialContainer {
+  width: 70px;
+  height: 70px;
+
+  border-radius: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  font-size: 28px;
+
+  transition: var(--transition);
+}
+
+.socialContainer:hover {
+  transform: translateY(-6px);
+}
+
+.containerOne {
+  background: linear-gradient(
+    135deg,
+    #fd5949,
+    #d6249f
+  );
+}
+
+.containerTwo {
+  background: linear-gradient(
+    135deg,
+    #111827,
+    #374151
+  );
+}
+
+.containerThree {
+  background: linear-gradient(
+    135deg,
+    #0077b5,
+    #0a66c2
+  );
+}
+
+.containerFour {
+  background: linear-gradient(
+    135deg,
+    #12b8d6,
+    #0ea5c6
+  );
+}
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .about-hero {
+    padding: 140px 20px 80px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .about-hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .about-video-section h2,
+  .about-social-section h2 {
+    font-size: 2rem;
+  }
+
+  .socialContainer {
+    width: 60px;
+    height: 60px;
+
+    font-size: 24px;
+  }
+}
+
+/* =========================================================
+   24. FOOTER
+========================================================= */
+
+footer,
+.footer {
+  padding: 40px 20px;
+
+  text-align: center;
+
+  background: #081120;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  color: #cbd5e1;
+}/* =========================================================
+   25. CHATBOT
+========================================================= */
+
+#chatbot-container {
+  position: fixed;
+  right: 24px;
+  bottom: 18px;
+
+  z-index: 2000;
+}
+
+/* BOTÃO FLUTUANTE */
+
+#chatbot-toggle {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-hover)
+  );
+
+  color: #ffffff;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 32px rgba(18, 184, 214, 0.35);
+
+  transition: var(--transition);
+}
+
+#chatbot-toggle:hover {
+  transform: scale(1.08);
+
+  box-shadow:
+    0 18px 42px rgba(18, 184, 214, 0.45);
+}
+
+/* JANELA DO CHAT */
+
+#chatbot-window {
+  width: 340px;
+  height: 430px;
+
+  position: fixed;
+  right: 24px;
+  bottom: 88px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #081120;
+
+  border: 1px solid rgba(18, 184, 214, 0.25);
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 24px 60px rgba(15, 23, 42, 0.35);
+}
+
+#chatbot-window.hidden {
+  display: none;
+}
+
+/* CABEÇALHO DO CHAT */
+
+#chatbot-header {
+  padding: 12px 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #0f172a;
+
+  border-bottom: 1px solid rgba(18, 184, 214, 0.16);
+}
+
+.chatbot-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#close-chat {
+  width: 28px;
+  height: 28px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+#close-chat:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* MENSAGENS */
+
+#chatbot-messages {
+  flex: 1;
+
+  padding: 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  overflow-y: auto;
+}
+
+#chatbot-messages::-webkit-scrollbar {
+  width: 5px;
+}
+
+#chatbot-messages::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 999px;
+}
+
+.message {
+  max-width: 85%;
+
+  padding: 10px 12px;
+
+  border-radius: 14px;
+
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.user-message {
+  align-self: flex-end;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-hover)
+  );
+
+  color: #ffffff;
+
+  border-bottom-right-radius: 4px;
+}
+
+.bot-message {
+  align-self: flex-start;
+
+  background: #ffffff;
+
+  color: var(--text-main);
+
+  border-left: 3px solid var(--primary-color);
+  border-bottom-left-radius: 4px;
+}
+
+/* ÁREA DE DIGITAÇÃO */
+
+#chatbot-input-area {
+  padding: 12px;
+
+  display: flex;
+  gap: 8px;
+
+  background: #0f172a;
+
+  border-top: 1px solid rgba(18, 184, 214, 0.16);
+}
+
+#chatbot-input {
+  flex: 1;
+  height: 40px;
+
+  padding: 0 12px;
+
+  border-radius: 12px;
+  border: 1px solid rgba(18, 184, 214, 0.24);
+
+  background: #ffffff;
+
+  color: var(--text-main);
+
+  outline: none;
+}
+
+#chatbot-input::placeholder {
+  color: var(--text-muted);
+}
+
+#chatbot-input:focus {
+  border-color: var(--primary-color);
+
+  box-shadow:
+    0 0 0 3px rgba(18, 184, 214, 0.12);
+}
+
+#send-chat {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-hover)
+  );
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+#send-chat:hover {
+  transform: scale(1.05);
+}
+
+/* LINKS DO CHAT */
+
+.bot-message a {
+  color: var(--primary-color);
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.bot-message a:hover {
+  text-decoration: underline;
+}/* =========================================================
+   26. LOADER
+   Tela de carregamento inicial
+========================================================= */
+
+#loader {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #081120;
+
+  z-index: 9999;
+}
+
+.loader-root {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.loader-box {
+  position: relative;
+  z-index: 2;
+}
+
+.lines {
+  width: 120px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 15px;
+}
+
+.lines.left {
+  margin-right: -20px;
+}
+
+.lines.right {
+  margin-left: -20px;
+}
+
+.lines span {
+  display: block;
+
+  width: 100%;
+  height: 2px;
+
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-color),
+    transparent
+  );
+
+  filter: blur(1px);
+  opacity: 0.8;
+}
+
+.lines span::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -50%;
+
+  width: 50%;
+  height: 100%;
+
+  background: var(--primary-color);
+
+  filter: blur(4px);
+
+  animation: flow 1.2s linear infinite;
+}
+
+.lines.right span::after {
+  animation-direction: reverse;
+}
+
+@keyframes flow {
+  0% {
+    left: -50%;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+/* =========================================================
+   27. TRANSIÇÃO ENTRE PÁGINAS
+========================================================= */
+
+#page-transition {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #081120;
+
+  z-index: 9999;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.4s ease;
+}
+
+#page-transition.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.glitch {
+  position: relative;
+
+  color: #ffffff;
+
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 3px;
+
+  animation: shift 1.5s infinite alternate;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-glitch);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.glitch::before {
+  color: var(--primary-color);
+
+  transform: translate(-2px, 0);
+  opacity: 0.75;
+}
+
+.glitch::after {
+  color: #67e8f9;
+
+  transform: translate(2px, 0);
+  opacity: 0.75;
+}
+
+@keyframes shift {
+  0% {
+    transform: skewX(0deg);
+  }
+
+  20% {
+    transform: skewX(10deg);
+  }
+
+  40% {
+    transform: skewX(-10deg);
+  }
+
+  60% {
+    transform: skewX(5deg);
+  }
+
+  80% {
+    transform: skewX(-5deg);
+  }
+
+  100% {
+    transform: skewX(0deg);
+  }
+}
+
+/* =========================================================
+   28. RESPONSIVIDADE - TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 18px 28px;
+  }
+
+  #main-nav ul {
+    gap: 28px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.8rem, 10vw, 4.5rem);
+  }
+
+  .direction-hero,
+  .robust-hero,
+  .performance-hero {
+    padding: 130px 6% 90px;
+  }
+}
+/* =========================================================
+   29. RESPONSIVIDADE - CELULAR
+========================================================= */
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 18px 22px;
+  }
+
+  .logo-text {
+    font-size: 1.45rem;
+  }
+
+  .cta-btn {
+    display: none;
+  }
+
+  .hero-section {
+    min-height: 90vh;
+    padding: 130px 20px 70px;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content .slogan {
+    font-size: 1.1rem;
+  }
+
+  .btn-card a {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .services-section,
+  .contact-section,
+  .direction-section,
+  .robust-section,
+  .performance-section,
+  .direction-cta,
+  .robust-cta,
+  .performance-cta {
+    padding: 70px 24px;
+  }
+
+  .value-propositions {
+    gap: 22px;
+  }
+
+  .proposition-block {
+    padding: 30px 24px;
+  }
+
+  .services-hero {
+    min-height: 55vh;
+    padding: 130px 24px 70px;
+  }
+
+  .direction-hero,
+  .robust-hero,
+  .performance-hero {
+    min-height: auto;
+    padding: 130px 24px 80px;
+  }
+
+  .direction-buttons,
+  .robust-buttons,
+  .performance-buttons {
+    flex-direction: column;
+  }
+
+  .direction-btn-primary,
+  .direction-btn-secondary,
+  .robust-btn-primary,
+  .robust-btn-secondary,
+  .performance-btn-primary,
+  .performance-btn-secondary {
+    width: 100%;
+  }
+
+  .social-card {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .socialContainer {
+    width: 60px;
+    height: 60px;
+  }
+
+  #chatbot-window {
+    width: calc(100vw - 32px);
+    height: 440px;
+
+    right: 16px;
+    bottom: 82px;
+  }
+
+  #chatbot-container {
+    right: 16px;
+    bottom: 14px;
+  }
+
+  #chatbot-toggle {
+    width: 56px;
+    height: 56px;
+  }
+}

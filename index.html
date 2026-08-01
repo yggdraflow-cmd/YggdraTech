@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <!-- Configurações básicas da página -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título da página -->
+  <title>Yggdra Tech</title>
+
+  <!-- CSS principal do site -->
+  <link rel="stylesheet" href="./css/style.css?v=6.0">
+
+  <!-- Fonte Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Ícones Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+  <!-- NAVBAR GLOBAL -->
+  <div id="navbar-container"></div>
+
+  <!-- HERO / PRIMEIRA DOBRA DO SITE -->
+  <section id="hero" class="hero-section">
+
+    <!-- Camada sobre o fundo -->
+    <div class="hero-overlay"></div>
+
+    <!-- Conteúdo principal do hero -->
+    <div class="hero-content">
+
+      <h1>
+        Yggdra Tech
+      </h1>
+
+      <p class="slogan">
+        A raiz da sua arquitetura digital.
+      </p>
+
+      <!-- Botão principal -->
+      <div class="btn-wrapper">
+
+        <div class="btn-card">
+
+          <a href="./pages/services.html">
+            Explore Nossas Soluções
+          </a>
+
+          <div class="btn-glow"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- REDES SOCIAIS -->
+  <section class="about-social-section">
+
+    <h2>
+      Siga-nos nas redes sociais
+    </h2>
+
+    <div class="social-card">
+
+      <!-- Instagram -->
+      <a
+        href="https://www.instagram.com/yggdra_tech"
+        target="_blank"
+        class="socialContainer containerOne">
+
+        <i class="fab fa-instagram"></i>
+
+      </a>
+
+      <!-- X / Twitter -->
+      <a
+        href="https://twitter.com"
+        target="_blank"
+        class="socialContainer containerTwo">
+
+        <i class="fab fa-x-twitter"></i>
+
+      </a>
+
+      <!-- LinkedIn -->
+      <a
+        href="https://linkedin.com/company/yggdra-tech"
+        target="_blank"
+        class="socialContainer containerThree">
+
+        <i class="fab fa-linkedin-in"></i>
+
+      </a>
+
+      <!-- E-mail -->
+      <a
+        href="mailto:yggdratech@outlook.com"
+        class="socialContainer containerFour">
+
+        <i class="fas fa-envelope"></i>
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+
+    <p>
+      &copy; 2026 Yggdra Tech. Todos os direitos reservados.
+    </p>
+
+  </footer>
+
+  <!-- CHATBOT -->
+  <div id="chatbot-container">
+
+    <!-- Janela do chatbot -->
+    <div id="chatbot-window" class="hidden">
+
+      <!-- Cabeçalho do chatbot -->
+      <div id="chatbot-header">
+
+        <span class="chatbot-title">
+          <i class="fas fa-robot"></i>
+          Yggdra Bot
+        </span>
+
+        <!-- Botão para fechar -->
+        <button id="close-chat" type="button" aria-label="Fechar chatbot">
+          <i class="fas fa-times"></i>
+        </button>
+
+      </div>
+
+      <!-- Área onde aparecem as mensagens -->
+      <div id="chatbot-messages"></div>
+
+      <!-- Campo de digitação -->
+      <div id="chatbot-input-area">
+
+        <input
+          type="text"
+          id="chatbot-input"
+          placeholder="Digite sua mensagem..."
+          autocomplete="off"
+        >
+
+        <!-- Botão de enviar -->
+        <button id="send-chat" type="button" aria-label="Enviar mensagem">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- Botão flutuante para abrir o chatbot -->
+    <button id="chatbot-toggle" type="button" aria-label="Abrir chatbot">
+      <i class="fas fa-comment-dots"></i>
+    </button>
+
+  </div>
+
+  <!-- Carrega a navbar global -->
+  <script src="./js/navbar.js"></script>
+
+  <!-- Controla o chatbot e funções gerais -->
+  <script src="./js/script.js"></script>
+
+</body>
+
+</html>

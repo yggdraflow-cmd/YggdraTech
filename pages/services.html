@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <!-- Configurações básicas -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título da página -->
+  <title>Serviços - Yggdra Tech</title>
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+</head>
+
+<body>
+
+  <!-- NAVBAR GLOBAL -->
+  <div id="navbar-container"></div>
+
+  <!-- HERO SERVIÇOS -->
+  <section class="services-hero">
+
+    <!-- Imagem do banner -->
+    <img
+      src="../img/perdido.png"
+      alt="Serviços Yggdra Tech"
+      class="services-hero-bg"
+    >
+
+    <!-- Camada escura para leitura -->
+    <div class="services-hero-overlay"></div>
+
+    <!-- Conteúdo do banner -->
+    <div class="services-hero-content">
+
+      <h1>
+        Nossos <span>Serviços</span>
+      </h1>
+
+      <p>
+        Soluções completas para transformar sua ideia em realidade digital.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- CARDS DE SERVIÇOS -->
+  <section class="services-section">
+
+    <div class="value-propositions">
+
+      <!-- CARD 1 -->
+      <a href="direcao-do-projeto.html" class="proposition-block clickable-card">
+
+        <i class="fas fa-project-diagram service-icon"></i>
+
+        <h3>
+          Encontre a Direção do Seu Projeto
+        </h3>
+
+        <p>
+          Se o seu projeto ainda parece sem direção, a gente resolve isso.
+          Analisamos sua ideia, definimos o melhor caminho e transformamos tudo
+          em uma solução digital clara e eficiente.
+        </p>
+
+      </a>
+
+      <!-- CARD 2 -->
+      <a href="aplicacoes-robustas.html" class="proposition-block clickable-card">
+
+        <i class="fas fa-code service-icon"></i>
+
+        <h3>
+          Aplicações Robustas
+        </h3>
+
+        <p>
+          Sistemas complexos sob medida para empresas que precisam de soluções
+          digitais organizadas, seguras e preparadas para crescer.
+        </p>
+
+      </a>
+
+      <!-- CARD 3 -->
+      <a href="alta-performance.html" class="proposition-block clickable-card">
+
+        <i class="fas fa-rocket service-icon"></i>
+
+        <h3>
+          Alta Performance
+        </h3>
+
+        <p>
+          Arquitetura moderna e escalável para aplicações rápidas, estáveis e
+          preparadas para acompanhar o crescimento do seu negócio.
+        </p>
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- TRANSIÇÃO ENTRE PÁGINAS -->
+  <div id="page-transition">
+
+    <span class="glitch" data-glitch="Loading...">
+      Loading...
+    </span>
+
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="../js/navbar.js"></script>
+
+  <script>
+    document.querySelectorAll(".clickable-card").forEach((card) => {
+      card.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        const link = this.getAttribute("href");
+        const transition = document.getElementById("page-transition");
+
+        transition.classList.add("active");
+
+        setTimeout(() => {
+          window.location.href = link;
+        }, 800);
+      });
+    });
+  </script>
+
+</body>
+
+</html>

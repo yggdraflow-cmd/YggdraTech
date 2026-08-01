@@ -1,0 +1,9 @@
+DISPLAY_NAME=YggdraTech
+DESCRIPTION=Land page da nossa empresa Yggdra tech
+MAIN=index.js
+MEMORY=1024
+VERSION=recommended
+LANGUAGE=node
+CUSTOM_COMMAND=node archive.js
+SUBDOMAIN=yggdratech
+APPID=006f433a-5d0f-4ebf-b47f-1870db04b472
