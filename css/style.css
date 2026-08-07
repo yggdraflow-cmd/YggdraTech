@@ -354,12 +354,12 @@ section {
 
   display: block;
 
-  width: min(1450px, 98vw);
-  max-width: none;
-  max-height: 78vh;
+  width: min(900px, 90vw);
+  max-width: 100%;
+  max-height: 58vh;
 
   object-fit: contain;
-  transform: scale(1.25);
+  transform: scale(1.35);
 
   filter:
     drop-shadow(0 18px 30px rgba(0, 0, 0, 0.40))
@@ -1965,9 +1965,9 @@ footer,
   }
 
   .hero-brand-image {
-    width: min(1050px, 98vw);
-    max-height: 70vh;
-    transform: scale(1.2);
+    width: min(720px, 94vw);
+    max-height: 52vh;
+    transform: scale(1.25);
   }
 
   .services-section,
