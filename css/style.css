@@ -2056,7 +2056,7 @@ footer,
 
 .brand-link {
   width: 86px;
-  height: 76px;
+  height: 82px;
 
   display: flex;
   align-items: center;
@@ -2070,7 +2070,7 @@ footer,
 }
 
 .brand-icon {
-  width: 250px;
+  width: 228px;
   height: auto;
   max-width: none;
 
@@ -2078,6 +2078,7 @@ footer,
   flex: 0 0 auto;
 
   object-fit: contain;
+  transform: translateY(6px);
 
   transition:
     transform 0.25s ease,
@@ -2085,7 +2086,7 @@ footer,
 }
 
 .brand-link:hover .brand-icon {
-  transform: scale(1.08);
+  transform: translateY(6px) scale(1.08);
 
   filter:
     drop-shadow(0 0 12px rgba(0, 153, 255, 0.45));
@@ -2094,11 +2095,16 @@ footer,
 @media (max-width: 768px) {
   .brand-link {
     width: 68px;
-    height: 62px;
+    height: 66px;
   }
 
   .brand-icon {
-    width: 205px;
+    width: 188px;
+    transform: translateY(5px);
+  }
+
+  .brand-link:hover .brand-icon {
+    transform: translateY(5px) scale(1.08);
   }
 }
 
