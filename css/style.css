@@ -2046,3 +2046,62 @@ footer,
     height: 56px;
   }
 }
+
+/* ===== MARCA GLOBAL DA NAVBAR ===== */
+
+.logo-text.brand-home {
+  width: 220px;
+  height: 118px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  overflow: hidden;
+
+  line-height: 0;
+  text-decoration: none;
+}
+
+.navbar-brand-logo {
+  width: 340px;
+  max-width: none;
+  height: auto;
+
+  flex: 0 0 auto;
+
+  transform: translateY(-35px);
+
+  object-fit: contain;
+
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+}
+
+.logo-text.brand-home:hover .navbar-brand-logo {
+  transform: translateY(-35px) scale(1.04);
+
+  filter:
+    drop-shadow(0 0 10px rgba(0, 153, 255, 0.25));
+}
+
+@media (max-width: 768px) {
+  .logo-text.brand-home {
+    width: 165px;
+    height: 90px;
+  }
+
+  .navbar-brand-logo {
+    width: 270px;
+    transform: translateY(-29px);
+  }
+
+  .logo-text.brand-home:hover .navbar-brand-logo {
+    transform: translateY(-29px) scale(1.03);
+  }
+}
+
+/* ===== FIM MARCA GLOBAL DA NAVBAR ===== */
