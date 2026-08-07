@@ -303,22 +303,33 @@ section {
 }
 /* =========================================================
    8. HERO DA HOME
-   Arte principal da identidade Yggdra Tech
+   Identidade visual Yggdra Tech
 ========================================================= */
 
 .hero-section {
   width: 100%;
   min-height: 72vh;
 
-  padding: 0;
+  padding: 130px 24px 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   position: relative;
   overflow: hidden;
 
-  background-image: url('../img/plan-selection-bg.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: #000000;
+}
+
+.hero-brand-image {
+  display: block;
+
+  width: min(900px, 90vw);
+  max-width: 100%;
+  max-height: 58vh;
+
+  object-fit: contain;
 }
 
 /* =========================================================
@@ -1915,9 +1926,13 @@ footer,
   }
 
   .hero-section {
-    min-height: 62vh;
-    padding: 0;
-    background-position: center;
+    min-height: 65vh;
+    padding: 110px 20px 50px;
+  }
+
+  .hero-brand-image {
+    width: min(720px, 94vw);
+    max-height: 52vh;
   }
 
   .services-section,
