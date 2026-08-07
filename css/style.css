@@ -2047,32 +2047,35 @@ footer,
   }
 }
 
-/* ===== MARCA GLOBAL DA NAVBAR ===== */
 
-.logo-text.brand-home {
-  width: 220px;
-  height: 118px;
+
+
+
+
+/* ===== ÁRVORE YGGDRA NA NAVBAR ===== */
+
+.brand-link {
+  width: 86px;
+  height: 76px;
 
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
 
   flex: 0 0 auto;
-
   overflow: hidden;
 
-  line-height: 0;
+  cursor: pointer;
   text-decoration: none;
 }
 
-.navbar-brand-logo {
-  width: 340px;
-  max-width: none;
+.brand-icon {
+  width: 250px;
   height: auto;
+  max-width: none;
 
+  display: block;
   flex: 0 0 auto;
-
-  transform: translateY(-35px);
 
   object-fit: contain;
 
@@ -2081,27 +2084,22 @@ footer,
     filter 0.25s ease;
 }
 
-.logo-text.brand-home:hover .navbar-brand-logo {
-  transform: translateY(-35px) scale(1.04);
+.brand-link:hover .brand-icon {
+  transform: scale(1.08);
 
   filter:
-    drop-shadow(0 0 10px rgba(0, 153, 255, 0.25));
+    drop-shadow(0 0 12px rgba(0, 153, 255, 0.45));
 }
 
 @media (max-width: 768px) {
-  .logo-text.brand-home {
-    width: 165px;
-    height: 90px;
+  .brand-link {
+    width: 68px;
+    height: 62px;
   }
 
-  .navbar-brand-logo {
-    width: 270px;
-    transform: translateY(-29px);
-  }
-
-  .logo-text.brand-home:hover .navbar-brand-logo {
-    transform: translateY(-29px) scale(1.03);
+  .brand-icon {
+    width: 205px;
   }
 }
 
-/* ===== FIM MARCA GLOBAL DA NAVBAR ===== */
+/* ===== FIM ÁRVORE YGGDRA NA NAVBAR ===== */
