@@ -3,44 +3,632 @@
 
 <head>
 
-  <!-- Configurações básicas da página -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Título da página -->
-  <title>Yggdra Tech</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <!-- CSS principal do site -->
-  <link rel="stylesheet" href="./css/style.css?v=6.0">
+  <meta
+    name="description"
+    content="Yggdra Tech - Sites, sistemas, automações e integrações desenvolvidos para negócios reais."
+  >
 
-  <!-- Fonte Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Yggdra Tech | Soluções Digitais</title>
 
-  <!-- Ícones Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="./css/style.css?v=6.0"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/prismo-home.css?v=1.0"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
 
 </head>
 
-<body>
+<body class="home-prismo">
 
-  <!-- NAVBAR GLOBAL -->
   <div id="navbar-container"></div>
 
-  <!-- HERO / PRIMEIRA DOBRA DO SITE -->
-  <section
-    id="hero"
-    class="hero-section"
-    aria-label="Yggdra Tech"
-  >
-    <img
-      src="./img/yggdraflow-brand-mark.png"
-      alt="Yggdra Tech - A raiz da arquitetura digital"
-      class="hero-brand-image"
-    />
-  </section>
+  <main>
 
-  <!-- REDES SOCIAIS -->
-  <section id="contato" class="about-social-section">
+    <section
+      id="hero"
+      class="prismo-home-hero"
+    >
+
+      <div class="prismo-home-container">
+
+        <div class="prismo-particle-stage">
+          <canvas
+            id="yggdra-particle-text"
+            aria-label="Apresentação animada da Yggdra Tech"
+          ></canvas>
+
+          <div
+            id="yggdra-hero-copy"
+            class="prismo-hero-copy is-hidden"
+            aria-live="polite"
+          >
+            <h1
+              id="yggdra-hero-title"
+              class="prismo-home-title is-hidden"
+            ></h1>
+
+            <p
+              id="yggdra-hero-description"
+              class="prismo-home-description is-hidden"
+            ></p>
+          </div>
+        </div>
+
+        <div class="prismo-home-actions">
+
+          <a
+            href="./pages/services.html"
+            class="prismo-home-btn prismo-home-btn-primary"
+          >
+
+            Conheça nossas soluções
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+          </a>
+
+          <a
+            href="mailto:yggdratech@outlook.com"
+            class="prismo-home-btn prismo-home-btn-secondary"
+          >
+
+            Fale com a Yggdra Tech
+
+          </a>
+
+        </div>
+
+        <div class="prismo-product-preview">
+
+          <div class="prismo-preview-browser">
+
+            <div class="prismo-browser-dots">
+
+              <span></span>
+              <span></span>
+              <span></span>
+
+            </div>
+
+            <div class="prismo-browser-url">
+
+              yggdratech.com
+
+            </div>
+
+            <div class="prismo-browser-status">
+
+              <span></span>
+
+              Online
+
+            </div>
+
+          </div>
+
+          <div class="prismo-preview-content">
+
+            <aside class="prismo-preview-sidebar">
+
+              <div class="prismo-preview-logo">
+
+                <span class="prismo-preview-logo-icon">
+
+                  <i class="fa-solid fa-code"></i>
+
+                </span>
+
+                Yggdra Tech
+
+              </div>
+
+              <div class="prismo-preview-menu">
+
+                <span class="prismo-preview-menu-label">
+
+                  SOLUÇÕES
+
+                </span>
+
+                <div class="prismo-preview-menu-item active">
+
+                  <i class="fa-solid fa-house"></i>
+
+                  Visão geral
+
+                </div>
+
+                <div class="prismo-preview-menu-item">
+
+                  <i class="fa-solid fa-globe"></i>
+
+                  Sites
+
+                </div>
+
+                <div class="prismo-preview-menu-item">
+
+                  <i class="fa-solid fa-window-maximize"></i>
+
+                  Sistemas
+
+                </div>
+
+                <div class="prismo-preview-menu-item">
+
+                  <i class="fa-solid fa-bolt"></i>
+
+                  Automações
+
+                </div>
+
+                <div class="prismo-preview-menu-item">
+
+                  <i class="fa-solid fa-link"></i>
+
+                  Integrações
+
+                </div>
+
+              </div>
+
+            </aside>
+
+            <div class="prismo-preview-main">
+
+              <div class="prismo-preview-heading">
+
+                <div>
+
+                  <span class="prismo-preview-kicker">
+
+                    YGGDRA TECH
+
+                  </span>
+
+                  <h2>
+
+                    Sua estrutura digital em evolução
+
+                  </h2>
+
+                </div>
+
+                <button
+                  class="prismo-preview-new"
+                  type="button"
+                >
+
+                  Novo projeto
+
+                  <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+              </div>
+
+              <div class="prismo-preview-cards">
+
+                <article class="prismo-preview-card">
+
+                  <i class="fa-solid fa-globe"></i>
+
+                  <strong>
+                    Sites
+                  </strong>
+
+                  <span>
+                    Presença digital moderna e profissional.
+                  </span>
+
+                </article>
+
+                <article class="prismo-preview-card">
+
+                  <i class="fa-solid fa-window-maximize"></i>
+
+                  <strong>
+                    Sistemas
+                  </strong>
+
+                  <span>
+                    Soluções desenvolvidas para sua operação.
+                  </span>
+
+                </article>
+
+                <article class="prismo-preview-card">
+
+                  <i class="fa-solid fa-bolt"></i>
+
+                  <strong>
+                    Automação
+                  </strong>
+
+                  <span>
+                    Menos tarefas manuais e mais eficiência.
+                  </span>
+
+                </article>
+
+              </div>
+
+              <div class="prismo-preview-project">
+
+                <div class="prismo-preview-project-top">
+
+                  <strong>
+                    Desenvolvimento do projeto
+                  </strong>
+
+                  <span>
+                    Em evolução
+                  </span>
+
+                </div>
+
+                <div class="prismo-progress-list">
+
+                  <div class="prismo-progress-row">
+
+                    <span>
+                      Estrutura
+                    </span>
+
+                    <div class="prismo-progress-bar">
+
+                      <span style="width: 94%"></span>
+
+                    </div>
+
+                    <strong>
+                      94%
+                    </strong>
+
+                  </div>
+
+                  <div class="prismo-progress-row">
+
+                    <span>
+                      Interface
+                    </span>
+
+                    <div class="prismo-progress-bar">
+
+                      <span style="width: 82%"></span>
+
+                    </div>
+
+                    <strong>
+                      82%
+                    </strong>
+
+                  </div>
+
+                  <div class="prismo-progress-row">
+
+                    <span>
+                      Integrações
+                    </span>
+
+                    <div class="prismo-progress-bar">
+
+                      <span style="width: 68%"></span>
+
+                    </div>
+
+                    <strong>
+                      68%
+                    </strong>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="prismo-solutions-section">
+
+      <div class="prismo-solutions-container">
+
+        <div class="prismo-section-intro">
+
+          <div class="prismo-section-label">
+            <span></span>
+            O QUE CONSTRUÍMOS
+          </div>
+
+          <h2>
+            Tecnologia pensada para
+            <span>fazer seu negócio evoluir.</span>
+          </h2>
+
+          <p>
+            Da presença digital à automação de processos,
+            desenvolvemos soluções que unem estratégia,
+            tecnologia e experiência.
+          </p>
+
+        </div>
+
+        <div class="prismo-bento-grid">
+
+          <article class="prismo-bento-card prismo-bento-large">
+
+            <div class="prismo-bento-copy">
+
+              <div class="prismo-bento-icon">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+
+              <span class="prismo-bento-kicker">
+                PRESENÇA DIGITAL
+              </span>
+
+              <h3>
+                Sites que representam
+                o nível do seu negócio.
+              </h3>
+
+              <p>
+                Experiências rápidas, modernas e responsivas
+                criadas para fortalecer sua marca e transformar
+                visitantes em oportunidades.
+              </p>
+
+            </div>
+
+            <div class="prismo-site-visual">
+
+              <div class="prismo-mini-browser">
+
+                <div class="prismo-mini-browser-top">
+
+                  <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                  <small>
+                    seunegocio.com.br
+                  </small>
+
+                </div>
+
+                <div class="prismo-mini-browser-body">
+
+                  <div class="prismo-mini-nav">
+                    <strong>brand</strong>
+
+                    <div>
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                    </div>
+                  </div>
+
+                  <div class="prismo-mini-hero">
+
+                    <span></span>
+
+                    <strong>
+                      Sua empresa merece
+                      uma presença à altura.
+                    </strong>
+
+                    <p></p>
+                    <p></p>
+
+                    <button type="button">
+                      Começar
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="prismo-bento-card">
+
+            <div class="prismo-bento-icon">
+              <i class="fa-solid fa-window-maximize"></i>
+            </div>
+
+            <span class="prismo-bento-kicker">
+              SISTEMAS
+            </span>
+
+            <h3>
+              Software sob medida.
+            </h3>
+
+            <p>
+              Sistemas desenvolvidos para organizar a operação
+              e atender necessidades reais da sua empresa.
+            </p>
+
+            <div class="prismo-system-visual">
+
+              <div class="prismo-system-row">
+
+                <span class="active"></span>
+
+                <div>
+                  <strong>Operação</strong>
+                  <small>Centralizada</small>
+                </div>
+
+                <i class="fa-solid fa-check"></i>
+
+              </div>
+
+              <div class="prismo-system-row">
+
+                <span></span>
+
+                <div>
+                  <strong>Processos</strong>
+                  <small>Organizados</small>
+                </div>
+
+                <i class="fa-solid fa-check"></i>
+
+              </div>
+
+              <div class="prismo-system-row">
+
+                <span></span>
+
+                <div>
+                  <strong>Dados</strong>
+                  <small>Acessíveis</small>
+                </div>
+
+                <i class="fa-solid fa-check"></i>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="prismo-bento-card">
+
+            <div class="prismo-bento-icon">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+
+            <span class="prismo-bento-kicker">
+              AUTOMAÇÃO
+            </span>
+
+            <h3>
+              Menos trabalho manual.
+            </h3>
+
+            <p>
+              Automatizamos tarefas repetitivas para sua equipe
+              ganhar tempo e produtividade.
+            </p>
+
+            <div class="prismo-flow-visual">
+
+              <div class="prismo-flow-node">
+                <i class="fa-solid fa-user"></i>
+              </div>
+
+              <span></span>
+
+              <div class="prismo-flow-node primary">
+                <i class="fa-solid fa-gears"></i>
+              </div>
+
+              <span></span>
+
+              <div class="prismo-flow-node">
+                <i class="fa-solid fa-check"></i>
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="prismo-bento-card prismo-bento-wide">
+
+            <div class="prismo-bento-copy">
+
+              <div class="prismo-bento-icon">
+                <i class="fa-solid fa-link"></i>
+              </div>
+
+              <span class="prismo-bento-kicker">
+                INTEGRAÇÕES
+              </span>
+
+              <h3>
+                Suas ferramentas trabalhando juntas.
+              </h3>
+
+              <p>
+                Conectamos serviços, APIs e plataformas para criar
+                uma estrutura digital mais eficiente e integrada.
+              </p>
+
+            </div>
+
+            <div class="prismo-integration-visual">
+
+              <div class="prismo-integration-core">
+                <i class="fa-solid fa-code"></i>
+              </div>
+
+              <div class="prismo-integration-chip chip-one">
+                API
+              </div>
+
+              <div class="prismo-integration-chip chip-two">
+                WEB
+              </div>
+
+              <div class="prismo-integration-chip chip-three">
+                DATA
+              </div>
+
+              <div class="prismo-integration-chip chip-four">
+                CRM
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+</main>
+
+  <section class="about-social-section">
 
     <h2>
       Siga-nos nas redes sociais
@@ -48,40 +636,47 @@
 
     <div class="social-card">
 
-      <!-- Instagram -->
       <a
         href="https://www.instagram.com/yggdra_tech"
         target="_blank"
-        class="socialContainer containerOne">
+        rel="noopener noreferrer"
+        class="socialContainer containerOne"
+        aria-label="Instagram"
+      >
 
         <i class="fab fa-instagram"></i>
 
       </a>
 
-      <!-- X / Twitter -->
       <a
         href="https://twitter.com"
         target="_blank"
-        class="socialContainer containerTwo">
+        rel="noopener noreferrer"
+        class="socialContainer containerTwo"
+        aria-label="X"
+      >
 
         <i class="fab fa-x-twitter"></i>
 
       </a>
 
-      <!-- LinkedIn -->
       <a
         href="https://linkedin.com/company/yggdra-tech"
         target="_blank"
-        class="socialContainer containerThree">
+        rel="noopener noreferrer"
+        class="socialContainer containerThree"
+        aria-label="LinkedIn"
+      >
 
         <i class="fab fa-linkedin-in"></i>
 
       </a>
 
-      <!-- E-mail -->
       <a
         href="mailto:yggdratech@outlook.com"
-        class="socialContainer containerFour">
+        class="socialContainer containerFour"
+        aria-label="E-mail"
+      >
 
         <i class="fas fa-envelope"></i>
 
@@ -91,7 +686,6 @@
 
   </section>
 
-  <!-- RODAPÉ -->
   <footer class="footer">
 
     <p>
@@ -100,31 +694,37 @@
 
   </footer>
 
-  <!-- CHATBOT -->
   <div id="chatbot-container">
 
-    <!-- Janela do chatbot -->
-    <div id="chatbot-window" class="hidden">
+    <div
+      id="chatbot-window"
+      class="hidden"
+    >
 
-      <!-- Cabeçalho do chatbot -->
       <div id="chatbot-header">
 
         <span class="chatbot-title">
+
           <i class="fas fa-robot"></i>
+
           Yggdra Bot
+
         </span>
 
-        <!-- Botão para fechar -->
-        <button id="close-chat" type="button" aria-label="Fechar chatbot">
+        <button
+          id="close-chat"
+          type="button"
+          aria-label="Fechar chatbot"
+        >
+
           <i class="fas fa-times"></i>
+
         </button>
 
       </div>
 
-      <!-- Área onde aparecem as mensagens -->
       <div id="chatbot-messages"></div>
 
-      <!-- Campo de digitação -->
       <div id="chatbot-input-area">
 
         <input
@@ -134,27 +734,35 @@
           autocomplete="off"
         >
 
-        <!-- Botão de enviar -->
-        <button id="send-chat" type="button" aria-label="Enviar mensagem">
+        <button
+          id="send-chat"
+          type="button"
+          aria-label="Enviar mensagem"
+        >
+
           <i class="fas fa-paper-plane"></i>
+
         </button>
 
       </div>
 
     </div>
 
-    <!-- Botão flutuante para abrir o chatbot -->
-    <button id="chatbot-toggle" type="button" aria-label="Abrir chatbot">
+    <button
+      id="chatbot-toggle"
+      type="button"
+      aria-label="Abrir chatbot"
+    >
+
       <i class="fas fa-comment-dots"></i>
+
     </button>
 
   </div>
 
-  <!-- Carrega a navbar global -->
   <script src="./js/navbar.js"></script>
-
-  <!-- Controla o chatbot e funções gerais -->
   <script src="./js/script.js"></script>
+  <script src="./js/particle-text.js"></script>
 
 </body>
 

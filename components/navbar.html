@@ -1,32 +1,34 @@
-<nav class="navbar">
-  <a href="/index.html" class="brand-link" aria-label="Voltar para a Home">
-  <img
-    src="/img/yggdra-tree.png"
-    alt="Yggdra Tech"
-    class="brand-icon"
-  />
-</a>
+<header class="navbar">
+  <a href="/index.html" class="logo-text">
+    Yggdra Tech
+  </a>
 
-  <button
-    class="hamburger-menu"
-    id="hamburger-menu"
-    aria-label="Abrir menu"
-    aria-expanded="false"
-    aria-controls="main-nav"
-    type="button"
-  >
-    ☰
+  <button class="hamburger-menu" type="button" aria-label="Abrir menu">
+    <i class="fas fa-bars"></i>
   </button>
 
-  <div class="nav-overlay" id="nav-overlay"></div>
+  <nav id="main-nav">
+    <ul class="nav-list">
+      <li>
+        <a href="/index.html">Home</a>
+      </li>
 
-  <div id="main-nav">
-    <ul>
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/pages/services.html">Serviços</a></li>
-      <li><a href="/pages/quem-somos.html">Quem Somos</a></li>
-      <li><a href="/pages/create-account.html">Criar conta</a></li>
-      <li><a href="http://localhost:5173/login">Entrar no YggdraFlow</a></li>
+      <li>
+        <a href="/pages/services.html">Soluções</a>
+      </li>
+
+      <li>
+        <a href="/pages/quem-somos.html">Quem Somos</a>
+      </li>
+
+      <li>
+        <a href="mailto:yggdratech@outlook.com" class="nav-contact-btn">
+          Fale conosco
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </li>
     </ul>
-  </div>
-</nav>
+  </nav>
+
+  <div class="nav-overlay"></div>
+</header>

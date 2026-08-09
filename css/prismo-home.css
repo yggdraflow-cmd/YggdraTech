@@ -1,0 +1,1666 @@
+/* =========================================================
+   YGGDRA TECH - HOME ESTILO PRISMO
+========================================================= */
+
+.home-prismo {
+  font-family: "Inter", sans-serif;
+  background: #f7f7f5;
+  color: #081120;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.home-prismo .navbar {
+  position: fixed;
+
+  top: 18px;
+  left: 50%;
+
+  width: min(calc(100% - 32px), 1180px);
+
+  padding: 9px 10px 9px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 999px;
+
+  box-shadow:
+    0 10px 35px rgba(15, 23, 42, 0.06),
+    0 2px 8px rgba(15, 23, 42, 0.03);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  transform: translateX(-50%);
+
+  z-index: 1000;
+}
+
+.home-prismo .logo-text {
+  color: #081120;
+
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.home-prismo .logo-text:hover {
+  color: #12b8d6;
+}
+
+.home-prismo #main-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.home-prismo #main-nav ul li a {
+  padding: 10px 14px;
+
+  color: #475569;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  border-radius: 999px;
+
+  transition: 0.2s ease;
+}
+
+.home-prismo #main-nav ul li a::after {
+  display: none;
+}
+
+.home-prismo #main-nav ul li a:hover {
+  color: #081120;
+  background: #f1f5f9;
+}
+
+.home-prismo #main-nav ul li .nav-contact-btn {
+  margin-left: 4px;
+  padding: 11px 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #ffffff;
+
+  background: #081120;
+
+  box-shadow:
+    0 8px 20px rgba(8, 17, 32, 0.14);
+}
+
+.home-prismo #main-nav ul li .nav-contact-btn:hover {
+  color: #ffffff;
+  background: #0f172a;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.prismo-home-hero {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding:
+    150px 20px
+    95px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 8% 28%,
+      rgba(18, 184, 214, 0.13),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 92% 20%,
+      rgba(103, 232, 249, 0.11),
+      transparent 24%
+    ),
+    linear-gradient(
+      180deg,
+      #fafaf8 0%,
+      #f5f6f4 100%
+    );
+
+  border-bottom:
+    1px solid rgba(15, 23, 42, 0.06);
+}
+
+.prismo-home-hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(15, 23, 42, 0.026) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.026) 1px,
+      transparent 1px
+    );
+
+  background-size: 68px 68px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 78%
+    );
+}
+
+.prismo-home-container {
+  position: relative;
+
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  z-index: 2;
+}
+
+/* =========================================================
+   TEXTO PRINCIPAL
+========================================================= */
+
+.prismo-home-badge {
+  width: max-content;
+
+  margin: 0 auto 24px;
+  padding: 7px 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #475569;
+  background: rgba(255, 255, 255, 0.8);
+
+  border:
+    1px solid rgba(15, 23, 42, 0.08);
+
+  border-radius: 999px;
+
+  box-shadow:
+    0 6px 16px rgba(15, 23, 42, 0.035);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.prismo-home-badge-dot {
+  width: 7px;
+  height: 7px;
+
+  background: #12b8d6;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 4px rgba(18, 184, 214, 0.12);
+}
+
+.prismo-home-title {
+  max-width: 980px;
+
+  margin: 0 auto;
+
+  color: #081120;
+
+  font-size:
+    clamp(3.7rem, 7.5vw, 7rem);
+
+  font-weight: 700;
+  line-height: 0.94;
+  letter-spacing: -0.075em;
+
+  text-align: center;
+}
+
+.prismo-home-title span {
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      #087f95 0%,
+      #12b8d6 50%,
+      #5bd7eb 100%
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.prismo-home-description {
+  max-width: 690px;
+
+  margin: 30px auto 0;
+
+  color: #64748b;
+
+  font-size: 17px;
+  line-height: 1.75;
+
+  text-align: center;
+}
+
+.prismo-home-actions {
+  margin-top: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  flex-wrap: wrap;
+}
+
+.prismo-home-btn {
+  min-height: 52px;
+
+  padding: 0 22px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border-radius: 12px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition:
+    0.2s ease;
+}
+
+.prismo-home-btn-primary {
+  color: #ffffff;
+  background: #081120;
+
+  box-shadow:
+    0 12px 26px rgba(8, 17, 32, 0.16);
+}
+
+.prismo-home-btn-primary:hover {
+  color: #ffffff;
+  background: #0f172a;
+
+  transform: translateY(-2px);
+}
+
+.prismo-home-btn-secondary {
+  color: #081120;
+  background: #ffffff;
+
+  border:
+    1px solid rgba(15, 23, 42, 0.1);
+
+  box-shadow:
+    0 8px 20px rgba(15, 23, 42, 0.05);
+}
+
+.prismo-home-btn-secondary:hover {
+  color: #081120;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   MOCKUP
+========================================================= */
+
+.prismo-product-preview {
+  position: relative;
+
+  width: 100%;
+  max-width: 1080px;
+
+  margin: 72px auto 0;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border:
+    1px solid rgba(15, 23, 42, 0.11);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 48px 100px rgba(15, 23, 42, 0.14),
+    0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.prismo-preview-browser {
+  height: 46px;
+
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #fafafa;
+
+  border-bottom:
+    1px solid #e5e7eb;
+}
+
+.prismo-browser-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.prismo-browser-dots span {
+  width: 8px;
+  height: 8px;
+
+  background: #d1d5db;
+
+  border-radius: 50%;
+}
+
+.prismo-browser-dots span:first-child {
+  background: #12b8d6;
+}
+
+.prismo-browser-url {
+  padding: 5px 18px;
+
+  color: #94a3b8;
+  background: #f1f3f4;
+
+  border-radius: 7px;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.prismo-browser-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #64748b;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.prismo-browser-status span {
+  width: 6px;
+  height: 6px;
+
+  background: #22c55e;
+
+  border-radius: 50%;
+}
+
+.prismo-preview-content {
+  min-height: 510px;
+
+  display: grid;
+  grid-template-columns:
+    210px 1fr;
+}
+
+/* =========================================================
+   SIDEBAR MOCKUP
+========================================================= */
+
+.prismo-preview-sidebar {
+  padding: 22px 15px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #fafafa;
+
+  border-right:
+    1px solid #e5e7eb;
+}
+
+.prismo-preview-logo {
+  margin-bottom: 28px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #081120;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.prismo-preview-logo-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  background: #081120;
+
+  border-radius: 8px;
+}
+
+.prismo-preview-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.prismo-preview-menu-label {
+  margin:
+    0 9px
+    7px;
+
+  color: #94a3b8;
+
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.prismo-preview-menu-item {
+  min-height: 36px;
+
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #64748b;
+
+  border-radius: 8px;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.prismo-preview-menu-item.active {
+  color: #081120;
+  background: #ffffff;
+
+  border:
+    1px solid rgba(15, 23, 42, 0.06);
+
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.prismo-preview-menu-item.active i {
+  color: #12b8d6;
+}
+
+/* =========================================================
+   CONTEÚDO DO MOCKUP
+========================================================= */
+
+.prismo-preview-main {
+  padding: 32px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #fcfcfc
+    );
+}
+
+.prismo-preview-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.prismo-preview-kicker {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #94a3b8;
+
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.prismo-preview-heading h2 {
+  color: #081120;
+
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.prismo-preview-new {
+  height: 36px;
+
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #ffffff;
+  background: #081120;
+
+  border-radius: 9px;
+
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.prismo-preview-cards {
+  margin-top: 28px;
+
+  display: grid;
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 12px;
+}
+
+.prismo-preview-card {
+  min-height: 145px;
+
+  padding: 17px;
+
+  background: #ffffff;
+
+  border:
+    1px solid #e5e7eb;
+
+  border-radius: 13px;
+
+  box-shadow:
+    0 5px 14px rgba(15, 23, 42, 0.025);
+}
+
+.prismo-preview-card i {
+  width: 34px;
+  height: 34px;
+
+  margin-bottom: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #0b879d;
+  background: #dff8fc;
+
+  border-radius: 9px;
+
+  font-size: 11px;
+}
+
+.prismo-preview-card strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #081120;
+
+  font-size: 13px;
+}
+
+.prismo-preview-card span {
+  color: #94a3b8;
+
+  font-size: 8px;
+  line-height: 1.4;
+}
+
+.prismo-preview-project {
+  margin-top: 14px;
+  padding: 20px;
+
+  background: #ffffff;
+
+  border:
+    1px solid #e5e7eb;
+
+  border-radius: 13px;
+}
+
+.prismo-preview-project-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prismo-preview-project-top strong {
+  color: #081120;
+
+  font-size: 12px;
+}
+
+.prismo-preview-project-top span {
+  padding: 6px 9px;
+
+  color: #087f95;
+  background: #e6fafd;
+
+  border-radius: 999px;
+
+  font-size: 7px;
+  font-weight: 700;
+}
+
+.prismo-progress-list {
+  margin-top: 22px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.prismo-progress-row {
+  display: grid;
+  grid-template-columns:
+    90px 1fr 30px;
+
+  align-items: center;
+  gap: 12px;
+
+  color: #64748b;
+
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.prismo-progress-bar {
+  height: 7px;
+
+  overflow: hidden;
+
+  background: #edf1f3;
+
+  border-radius: 999px;
+}
+
+.prismo-progress-bar span {
+  display: block;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #081120,
+      #12b8d6
+    );
+
+  border-radius: inherit;
+}
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 992px) {
+
+  .home-prismo .hamburger-menu {
+    display: flex;
+
+    width: 40px;
+    height: 40px;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #081120;
+    background: #f1f5f9;
+
+    border-radius: 50%;
+  }
+
+  .home-prismo #main-nav {
+    position: fixed;
+
+    top: -18px;
+    right: calc(-100vw - 40px);
+
+    width: min(84vw, 330px);
+    height: calc(100vh + 36px);
+
+    padding: 100px 24px 30px;
+
+    display: block;
+
+    background: #ffffff;
+
+    transition: right 0.35s ease;
+
+    z-index: 1002;
+  }
+
+  .home-prismo #main-nav.active {
+    right: -18px;
+  }
+
+  .home-prismo #main-nav ul {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 6px;
+  }
+
+  .home-prismo #main-nav ul li a {
+    width: 100%;
+    padding: 14px;
+
+    display: flex;
+  }
+
+  .home-prismo #main-nav ul li .nav-contact-btn {
+    margin:
+      12px 0
+      0;
+
+    justify-content: center;
+  }
+
+  .home-prismo .nav-overlay.active {
+    display: block;
+
+    position: fixed;
+    inset: -20px;
+
+    background: rgba(8, 17, 32, 0.42);
+
+    backdrop-filter: blur(3px);
+
+    z-index: 1001;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .home-prismo .navbar {
+    top: 10px;
+
+    width: calc(100% - 20px);
+
+    padding-left: 16px;
+  }
+
+  .prismo-home-hero {
+    min-height: auto;
+
+    padding:
+      125px 16px
+      60px;
+  }
+
+  .prismo-home-title {
+    font-size:
+      clamp(3rem, 14vw, 4.8rem);
+
+    line-height: 0.96;
+  }
+
+  .prismo-home-description {
+    margin-top: 24px;
+
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .prismo-home-actions {
+    flex-direction: column;
+  }
+
+  .prismo-home-btn {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .prismo-product-preview {
+    margin-top: 50px;
+
+    border-radius: 16px;
+  }
+
+  .prismo-preview-browser {
+    height: 42px;
+  }
+
+  .prismo-browser-url {
+    display: none;
+  }
+
+  .prismo-preview-content {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+  }
+
+  .prismo-preview-sidebar {
+    display: none;
+  }
+
+  .prismo-preview-main {
+    padding: 18px;
+  }
+
+  .prismo-preview-heading h2 {
+    font-size: 16px;
+  }
+
+  .prismo-preview-new {
+    display: none;
+  }
+
+  .prismo-preview-cards {
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap: 7px;
+  }
+
+  .prismo-preview-card {
+    min-height: 100px;
+
+    padding: 10px;
+  }
+
+  .prismo-preview-card i {
+    width: 26px;
+    height: 26px;
+
+    margin-bottom: 12px;
+
+    font-size: 9px;
+  }
+
+  .prismo-preview-card strong {
+    font-size: 9px;
+  }
+
+  .prismo-preview-card span {
+    display: none;
+  }
+
+  .prismo-progress-row {
+    grid-template-columns:
+      65px 1fr 24px;
+
+    gap: 8px;
+
+    font-size: 6px;
+  }
+}
+
+
+.prismo-home-hero {
+  min-height: 100vh;
+  padding: 125px 20px 78px;
+}
+
+.prismo-home-badge {
+  margin-bottom: 20px;
+}
+
+.prismo-home-title {
+  max-width: 920px;
+  font-size: clamp(3.3rem, 6.2vw, 5.8rem);
+  line-height: 0.96;
+  letter-spacing: -0.07em;
+}
+
+.prismo-home-description {
+  max-width: 660px;
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.prismo-home-actions {
+  margin-top: 27px;
+}
+
+.prismo-product-preview {
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .prismo-home-hero {
+    padding: 115px 16px 55px;
+  }
+
+  .prismo-home-title {
+    max-width: 560px;
+    font-size: clamp(2.9rem, 12vw, 4.3rem);
+    line-height: 0.98;
+  }
+
+  .prismo-home-description {
+    margin-top: 21px;
+    font-size: 14px;
+  }
+
+  .prismo-home-actions {
+    margin-top: 24px;
+  }
+
+  .prismo-product-preview {
+    margin-top: 42px;
+  }
+}
+
+
+.prismo-home-title {
+  max-width: 980px;
+  font-size: clamp(2.9rem, 4.7vw, 4.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+@media (max-width: 768px) {
+  .prismo-home-title {
+    max-width: 560px;
+    font-size: clamp(2.5rem, 10vw, 3.6rem);
+    line-height: 1;
+  }
+}
+
+/* Evita corte dos descendentes no título */
+.prismo-home-title {
+  overflow: visible;
+}
+
+.prismo-home-title span {
+  line-height: 1.08;
+  padding-bottom: 0.08em;
+}
+
+/* PARTICLE TEXT HOME */
+
+.prismo-particle-stage {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  min-height: 350px;
+  margin: -25px auto -32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#yggdra-particle-text {
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  height: 350px;
+  background: transparent;
+  pointer-events: none;
+}
+
+.prismo-particle-seo {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .prismo-particle-stage {
+    min-height: 300px;
+    margin: -15px auto -20px;
+  }
+
+  #yggdra-particle-text {
+    height: 300px;
+  }
+}
+
+/* TEXTO NORMAL ENTRE AS CENAS DO HERO */
+
+.prismo-hero-copy {
+  width: 100%;
+  max-width: 1040px;
+  min-height: 350px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.prismo-hero-copy.is-hidden,
+#yggdra-particle-text.is-hidden,
+.prismo-home-title.is-hidden,
+.prismo-home-description.is-hidden {
+  display: none;
+}
+
+.prismo-hero-copy .prismo-home-title {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.prismo-hero-copy .prismo-home-description {
+  max-width: 760px;
+  margin: 0 auto;
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .prismo-hero-copy {
+    min-height: 300px;
+  }
+
+  .prismo-hero-copy .prismo-home-description {
+    max-width: 92%;
+    font-size: 15px;
+  }
+}
+
+
+.prismo-hero-copy .prismo-home-description {
+  max-width: 820px;
+  font-size: 21px;
+  line-height: 1.65;
+}
+
+@media (max-width: 768px) {
+  .prismo-hero-copy .prismo-home-description {
+    max-width: 92%;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+}
+
+
+/* DESCRIÇÃO FINAL DO HERO */
+#yggdra-hero-description.prismo-home-description {
+  width: 100%;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  font-size: 24px !important;
+  line-height: 1.6 !important;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+  #yggdra-hero-description.prismo-home-description {
+    max-width: 92% !important;
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+  }
+}
+
+/* =========================================================
+   SOLUÇÕES - BENTO GRID
+========================================================= */
+
+.prismo-solutions-section {
+  padding: 130px 20px;
+  background: #f7f7f5;
+}
+
+.prismo-solutions-container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.prismo-section-intro {
+  max-width: 800px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.prismo-section-label {
+  width: max-content;
+  margin: 0 auto 20px;
+  padding: 7px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.prismo-section-label span {
+  width: 7px;
+  height: 7px;
+  background: #12b8d6;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(18, 184, 214, 0.1);
+}
+
+.prismo-section-intro h2 {
+  margin: 0;
+  color: #081120;
+  font-size: clamp(2.6rem, 4.5vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.065em;
+}
+
+.prismo-section-intro h2 span {
+  display: block;
+  color: #12b8d6;
+}
+
+.prismo-section-intro p {
+  max-width: 650px;
+  margin: 25px auto 0;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.prismo-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.prismo-bento-card {
+  position: relative;
+  min-height: 430px;
+  padding: 32px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.prismo-bento-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(18, 184, 214, 0.2);
+  box-shadow: 0 24px 55px rgba(15, 23, 42, 0.08);
+}
+
+.prismo-bento-large {
+  min-height: 560px;
+}
+
+.prismo-bento-wide {
+  min-height: 390px;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+}
+
+.prismo-bento-icon {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #087f95;
+  background: #dff8fc;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.prismo-bento-kicker {
+  display: block;
+  margin-bottom: 9px;
+  color: #94a3b8;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.prismo-bento-card h3 {
+  max-width: 480px;
+  margin: 0;
+  color: #081120;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+
+.prismo-bento-card > p,
+.prismo-bento-copy > p {
+  max-width: 500px;
+  margin-top: 14px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* Site */
+
+.prismo-site-visual {
+  position: absolute;
+  right: -35px;
+  bottom: -55px;
+  width: 82%;
+  max-width: 470px;
+}
+
+.prismo-mini-browser {
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 17px;
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.13);
+  transform: rotate(-2deg);
+}
+
+.prismo-mini-browser-top {
+  height: 38px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fafafa;
+  border-bottom: 1px solid #e8ecef;
+}
+
+.prismo-mini-browser-top > div {
+  display: flex;
+  gap: 5px;
+}
+
+.prismo-mini-browser-top div span {
+  width: 6px;
+  height: 6px;
+  background: #d1d5db;
+  border-radius: 50%;
+}
+
+.prismo-mini-browser-top div span:first-child {
+  background: #12b8d6;
+}
+
+.prismo-mini-browser-top small {
+  color: #94a3b8;
+  font-size: 7px;
+}
+
+.prismo-mini-browser-body {
+  min-height: 300px;
+  padding: 19px;
+  background: linear-gradient(145deg, #ffffff, #f7fafb);
+}
+
+.prismo-mini-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prismo-mini-nav strong {
+  color: #081120;
+  font-size: 9px;
+}
+
+.prismo-mini-nav > div {
+  display: flex;
+  gap: 9px;
+}
+
+.prismo-mini-nav i {
+  width: 23px;
+  height: 3px;
+  display: block;
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+
+.prismo-mini-hero {
+  padding: 48px 20px 30px;
+}
+
+.prismo-mini-hero > span {
+  width: 50px;
+  height: 6px;
+  display: block;
+  margin-bottom: 14px;
+  background: #12b8d6;
+  border-radius: 10px;
+}
+
+.prismo-mini-hero strong {
+  max-width: 260px;
+  display: block;
+  color: #081120;
+  font-size: 24px;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.prismo-mini-hero p {
+  width: 75%;
+  height: 5px;
+  margin-top: 13px;
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+
+.prismo-mini-hero p + p {
+  width: 55%;
+  margin-top: 7px;
+}
+
+.prismo-mini-hero button {
+  margin-top: 23px;
+  padding: 9px 16px;
+  color: #ffffff;
+  background: #081120;
+  border: 0;
+  border-radius: 8px;
+  font-size: 7px;
+  font-weight: 700;
+}
+
+/* Sistemas */
+
+.prismo-system-visual {
+  margin-top: 48px;
+  padding: 12px;
+  background: #f8fafb;
+  border: 1px solid #e8ecef;
+  border-radius: 14px;
+}
+
+.prismo-system-row {
+  min-height: 62px;
+  padding: 0 13px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border-bottom: 1px solid #edf1f3;
+}
+
+.prismo-system-row:last-child {
+  border-bottom: 0;
+}
+
+.prismo-system-row > span {
+  width: 9px;
+  height: 9px;
+  background: #cbd5e1;
+  border-radius: 50%;
+}
+
+.prismo-system-row > span.active {
+  background: #12b8d6;
+  box-shadow: 0 0 0 4px rgba(18, 184, 214, 0.1);
+}
+
+.prismo-system-row div {
+  display: flex;
+  flex-direction: column;
+}
+
+.prismo-system-row strong {
+  color: #334155;
+  font-size: 9px;
+}
+
+.prismo-system-row small {
+  margin-top: 3px;
+  color: #94a3b8;
+  font-size: 7px;
+}
+
+.prismo-system-row i {
+  color: #12b8d6;
+  font-size: 9px;
+}
+
+/* Automação */
+
+.prismo-flow-visual {
+  min-height: 160px;
+  margin-top: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prismo-flow-node {
+  width: 54px;
+  height: 54px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  background: #ffffff;
+  border: 1px solid #dfe5e9;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.prismo-flow-node.primary {
+  color: #ffffff;
+  background: #081120;
+  border-color: #081120;
+}
+
+.prismo-flow-visual > span {
+  width: 75px;
+  height: 1px;
+  background: #dbe2e7;
+}
+
+/* Integrações */
+
+.prismo-integration-visual {
+  position: relative;
+  min-height: 290px;
+}
+
+.prismo-integration-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: #081120;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(8, 17, 32, 0.18);
+  transform: translate(-50%, -50%);
+}
+
+.prismo-integration-core::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 1px dashed rgba(18, 184, 214, 0.35);
+  border-radius: 50%;
+}
+
+.prismo-integration-chip {
+  position: absolute;
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 17px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.chip-one {
+  top: 25px;
+  left: 28%;
+}
+
+.chip-two {
+  top: 30px;
+  right: 24%;
+}
+
+.chip-three {
+  bottom: 22px;
+  left: 25%;
+}
+
+.chip-four {
+  right: 27%;
+  bottom: 25px;
+}
+
+@media (max-width: 768px) {
+  .prismo-solutions-section {
+    padding: 90px 16px;
+  }
+
+  .prismo-section-intro {
+    margin-bottom: 45px;
+  }
+
+  .prismo-section-intro h2 {
+    font-size: clamp(2.4rem, 11vw, 3.6rem);
+  }
+
+  .prismo-section-intro p {
+    font-size: 14px;
+  }
+
+  .prismo-bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prismo-bento-card,
+  .prismo-bento-large,
+  .prismo-bento-wide {
+    min-height: 420px;
+    padding: 25px;
+    grid-column: auto;
+  }
+
+  .prismo-bento-wide {
+    display: block;
+  }
+
+  .prismo-bento-card h3 {
+    font-size: 23px;
+  }
+
+  .prismo-site-visual {
+    width: 92%;
+    right: -30px;
+    bottom: -38px;
+  }
+
+  .prismo-integration-visual {
+    margin-top: 25px;
+  }
+}
+
+/* AJUSTE GRID - AUTOMAÇÃO E INTEGRAÇÕES LADO A LADO */
+
+.prismo-bento-wide {
+  grid-column: auto;
+  min-height: 430px;
+  display: block;
+}
+
+.prismo-bento-wide .prismo-bento-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.prismo-bento-wide .prismo-integration-visual {
+  min-height: 180px;
+  margin-top: 28px;
+}
+
+.prismo-bento-wide .prismo-integration-core {
+  width: 60px;
+  height: 60px;
+}
+
+.prismo-bento-wide .prismo-integration-core::before {
+  width: 125px;
+  height: 125px;
+}
+
+.prismo-bento-wide .prismo-integration-chip {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+}
+
+@media (max-width: 768px) {
+  .prismo-bento-wide {
+    grid-column: auto;
+    min-height: 420px;
+    display: block;
+  }
+
+  .prismo-bento-wide .prismo-integration-visual {
+    min-height: 190px;
+  }
+}
