@@ -65,6 +65,7 @@
   let nextChangeAt = 0;
   let animationFrame = null;
   let resizeTimer = null;
+  let sequenceFinished = false;
 
   let width = 1000;
   let height = 350;
@@ -379,6 +380,11 @@
 
     if (scene.type === "logo") {
       showLogo();
+
+      sequenceFinished = true;
+      nextChangeAt = Infinity;
+
+      return;
     }
 
     nextChangeAt =
@@ -466,21 +472,28 @@
     ctx.globalAlpha = 1;
 
     if (
+      !sequenceFinished &&
       time >= nextChangeAt
     ) {
       sceneIndex =
-        (sceneIndex + 1) %
-        scenes.length;
+        Math.min(
+          sceneIndex + 1,
+          scenes.length - 1
+        );
 
       applyScene(
         sceneIndex
       );
     }
 
-    animationFrame =
-      requestAnimationFrame(
-        animate
-      );
+    if (!sequenceFinished) {
+      animationFrame =
+        requestAnimationFrame(
+          animate
+        );
+    } else {
+      animationFrame = null;
+    }
   }
 
   const resizeObserver =

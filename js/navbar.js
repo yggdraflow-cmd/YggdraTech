@@ -84,6 +84,7 @@ async function loadNavbar() {
       yggdraFlowAppUrl
     );
 
+    initHomeRestart();
     initEntryMenu();
     initMobileNavbar();
   } catch (error) {
@@ -92,6 +93,40 @@ async function loadNavbar() {
       error
     );
   }
+}
+
+function initHomeRestart() {
+  const homeLink =
+    document.querySelector(
+      "[data-home-restart]"
+    );
+
+  if (!homeLink) {
+    return;
+  }
+
+  homeLink.addEventListener(
+    "click",
+    (event) => {
+      const currentPath =
+        window.location.pathname
+          .replace(/\/+$/, "");
+
+      const isHome =
+        currentPath === "" ||
+        currentPath.endsWith(
+          "/index.html"
+        );
+
+      if (!isHome) {
+        return;
+      }
+
+      event.preventDefault();
+
+      window.location.reload();
+    }
+  );
 }
 
 function initEntryMenu() {
