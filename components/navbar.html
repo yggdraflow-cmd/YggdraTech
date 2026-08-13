@@ -1,5 +1,5 @@
 <header class="navbar">
-  <a href="http://localhost:5173/admin/login" class="logo-text">
+  <a href="/index.html" class="logo-text">
     Yggdra Tech
   </a>
 
@@ -21,11 +21,98 @@
         <a href="/pages/quem-somos.html">Quem Somos</a>
       </li>
 
-      <li>
-        <a href="http://localhost:5173/admin/login" class="nav-contact-btn">
-          YggdraFlow
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </a>
+      <li class="nav-entry-menu">
+        <button
+          class="nav-contact-btn nav-entry-trigger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-entry-card"
+        >
+          Entrar
+          <i class="fa-solid fa-chevron-down nav-entry-chevron"></i>
+        </button>
+
+        <div
+          id="nav-entry-card"
+          class="nav-entry-card"
+          aria-hidden="true"
+        >
+          <a
+            href="#"
+            data-yggdraflow-path="/register"
+            class="nav-entry-item"
+          >
+            <span class="nav-entry-icon">
+              <i class="fa-solid fa-user-plus"></i>
+            </span>
+
+            <span>
+              <strong>Criar Conta</strong>
+              <small>Comece a usar o YggdraFlow</small>
+            </span>
+          </a>
+
+          <a
+            href="#"
+            data-yggdraflow-path="/admin/login"
+            class="nav-entry-item"
+          >
+            <span class="nav-entry-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </span>
+
+            <span>
+              <strong>YggdraFlow</strong>
+              <small>Acesso do Super Admin</small>
+            </span>
+          </a>
+
+          <a
+            href="#"
+            data-yggdraflow-path="/empresas"
+            class="nav-entry-item"
+          >
+            <span class="nav-entry-icon">
+              <i class="fa-solid fa-store"></i>
+            </span>
+
+            <span>
+              <strong>Catálogo</strong>
+              <small>Empresas disponíveis no YggdraFlow</small>
+            </span>
+          </a>
+
+          <div class="nav-entry-access">
+            <div class="nav-entry-access-heading">
+              <span class="nav-entry-icon">
+                <i class="fa-solid fa-right-to-bracket"></i>
+              </span>
+
+              <span>
+                <strong>Empresa / Clientes</strong>
+                <small>Acesse sua conta</small>
+              </span>
+            </div>
+
+            <div class="nav-entry-access-links">
+              <a
+                href="#"
+                data-yggdraflow-path="/login"
+              >
+                <i class="fa-solid fa-building"></i>
+                Empresa
+              </a>
+
+              <a
+                href="#"
+                data-yggdraflow-path="/cliente/login"
+              >
+                <i class="fa-solid fa-user"></i>
+                Cliente
+              </a>
+            </div>
+          </div>
+        </div>
       </li>
     </ul>
   </nav>

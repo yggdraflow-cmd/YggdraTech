@@ -84,6 +84,7 @@ async function loadNavbar() {
       yggdraFlowAppUrl
     );
 
+    initEntryMenu();
     initMobileNavbar();
   } catch (error) {
     console.error(
@@ -91,6 +92,72 @@ async function loadNavbar() {
       error
     );
   }
+}
+
+function initEntryMenu() {
+  const entryMenu =
+    document.querySelector(".nav-entry-menu");
+
+  const trigger =
+    document.querySelector(".nav-entry-trigger");
+
+  const card =
+    document.querySelector(".nav-entry-card");
+
+  if (!entryMenu || !trigger || !card) {
+    return;
+  }
+
+  function setOpen(isOpen) {
+    entryMenu.classList.toggle(
+      "active",
+      isOpen
+    );
+
+    trigger.setAttribute(
+      "aria-expanded",
+      String(isOpen)
+    );
+
+    card.setAttribute(
+      "aria-hidden",
+      String(!isOpen)
+    );
+  }
+
+  trigger.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    setOpen(
+      !entryMenu.classList.contains("active")
+    );
+  });
+
+  card.addEventListener("click", (event) => {
+    event.stopPropagation();
+  });
+
+  card
+    .querySelectorAll("a")
+    .forEach((link) => {
+      link.addEventListener("click", () => {
+        setOpen(false);
+      });
+    });
+
+  document.addEventListener("click", (event) => {
+    if (!entryMenu.contains(event.target)) {
+      setOpen(false);
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setOpen(false);
+      trigger.focus();
+    }
+  });
 }
 
 function initMobileNavbar() {
@@ -106,20 +173,65 @@ function initMobileNavbar() {
   const navLinks =
     document.querySelectorAll("#main-nav a");
 
+  const entryMenu =
+    document.querySelector(".nav-entry-menu");
+
+  const entryTrigger =
+    document.querySelector(".nav-entry-trigger");
+
+  const entryCard =
+    document.querySelector(".nav-entry-card");
+
   const body = document.body;
 
   if (!hamburgerButton || !mainNav) {
     return;
   }
 
-  function toggleMenu() {
-    mainNav.classList.toggle("active");
-
-    if (navOverlay) {
-      navOverlay.classList.toggle("active");
+  function closeEntryMenu() {
+    if (entryMenu) {
+      entryMenu.classList.remove("active");
     }
 
-    body.classList.toggle("no-scroll");
+    if (entryTrigger) {
+      entryTrigger.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+    }
+
+    if (entryCard) {
+      entryCard.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+    }
+  }
+
+  function toggleMenu() {
+    const willOpen =
+      !mainNav.classList.contains("active");
+
+    mainNav.classList.toggle(
+      "active",
+      willOpen
+    );
+
+    if (navOverlay) {
+      navOverlay.classList.toggle(
+        "active",
+        willOpen
+      );
+    }
+
+    body.classList.toggle(
+      "no-scroll",
+      willOpen
+    );
+
+    if (!willOpen) {
+      closeEntryMenu();
+    }
   }
 
   hamburgerButton.addEventListener(

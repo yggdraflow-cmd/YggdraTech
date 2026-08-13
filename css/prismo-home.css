@@ -1664,3 +1664,48 @@
     min-height: 190px;
   }
 }
+
+/* =========================================================
+   YGGDRA ENTRY MENU HOME
+========================================================= */
+
+.home-prismo #main-nav ul li .nav-entry-trigger {
+  margin-left: 4px;
+
+  padding: 11px 18px;
+
+  color: #ffffff;
+  background: #081120;
+
+  box-shadow:
+    0 8px 20px rgba(8, 17, 32, 0.14);
+}
+
+.home-prismo #main-nav ul li .nav-entry-trigger:hover {
+  color: #ffffff;
+  background: #0f172a;
+
+  transform: translateY(-1px);
+}
+
+.home-prismo #main-nav .nav-entry-card a {
+  color: #081120;
+}
+
+.home-prismo #main-nav .nav-entry-card a:hover {
+  color: #081120;
+}
+
+@media (max-width: 992px) {
+  .home-prismo .nav-entry-menu {
+    width: 100%;
+  }
+
+  .home-prismo #main-nav ul li .nav-entry-trigger {
+    width: 100%;
+
+    margin: 12px 0 0;
+
+    justify-content: center;
+  }
+}
