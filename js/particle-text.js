@@ -1,10 +1,36 @@
 (() => {
-  const canvas = document.getElementById("yggdra-particle-text");
-  const copyWrap = document.getElementById("yggdra-hero-copy");
-  const titleEl = document.getElementById("yggdra-hero-title");
-  const descriptionEl = document.getElementById("yggdra-hero-description");
+  const stage = document.querySelector(
+    ".prismo-particle-stage"
+  );
 
-  if (!canvas || !copyWrap || !titleEl || !descriptionEl) {
+  const canvas = document.getElementById(
+    "yggdra-particle-text"
+  );
+
+  const copyWrap = document.getElementById(
+    "yggdra-hero-copy"
+  );
+
+  const titleEl = document.getElementById(
+    "yggdra-hero-title"
+  );
+
+  const descriptionEl = document.getElementById(
+    "yggdra-hero-description"
+  );
+
+  const logoEl = document.getElementById(
+    "yggdra-hero-logo"
+  );
+
+  if (
+    !stage ||
+    !canvas ||
+    !copyWrap ||
+    !titleEl ||
+    !descriptionEl ||
+    !logoEl
+  ) {
     return;
   }
 
@@ -17,16 +43,20 @@
   const scenes = [
     {
       type: "particle",
-      duration: 3000 
+      duration: 3000,
     },
     {
       type: "title",
-      duration: 3400
+      duration: 3400,
     },
     {
       type: "description",
-      duration: 4200
-    }
+      duration: 4200,
+    },
+    {
+      type: "logo",
+      duration: 3500,
+    },
   ];
 
   const particles = [];
@@ -106,7 +136,7 @@
 
       y:
         height / 2 +
-        Math.sin(angle) * distance
+        Math.sin(angle) * distance,
     };
   }
 
@@ -140,10 +170,16 @@
       return [];
     }
 
-    const fontSize =
-      window.innerWidth <= 768
-        ? 76
-        : 96;
+    const fontSize = Math.floor(
+      Math.max(
+        54,
+        Math.min(
+          120,
+          width * 0.24,
+          height * 0.42
+        )
+      )
+    );
 
     bufferCtx.clearRect(
       0,
@@ -194,7 +230,7 @@
         ) {
           targets.push({
             x,
-            y
+            y,
           });
         }
       }
@@ -203,11 +239,12 @@
     return targets;
   }
 
-  function hideCopy() {
+  function hideAll() {
+    canvas.classList.add("is-hidden");
     copyWrap.classList.add("is-hidden");
-
     titleEl.classList.add("is-hidden");
     descriptionEl.classList.add("is-hidden");
+    logoEl.classList.add("is-hidden");
   }
 
   function scatterParticles() {
@@ -222,7 +259,7 @@
   }
 
   function showHello() {
-    hideCopy();
+    hideAll();
 
     canvas.classList.remove("is-hidden");
 
@@ -253,6 +290,7 @@
 
         particle.tx = target.x;
         particle.ty = target.y;
+
         particle.alpha =
           Math.max(
             particle.alpha,
@@ -282,18 +320,13 @@
 
   function showTitle() {
     scatterParticles();
-
-    canvas.classList.add("is-hidden");
+    hideAll();
 
     copyWrap.classList.remove(
       "is-hidden"
     );
 
     titleEl.classList.remove(
-      "is-hidden"
-    );
-
-    descriptionEl.classList.add(
       "is-hidden"
     );
 
@@ -305,14 +338,9 @@
 
   function showDescription() {
     scatterParticles();
-
-    canvas.classList.add("is-hidden");
+    hideAll();
 
     copyWrap.classList.remove(
-      "is-hidden"
-    );
-
-    titleEl.classList.add(
       "is-hidden"
     );
 
@@ -324,26 +352,33 @@
       "Sites, sistemas, automações e integrações desenvolvidos para fortalecer sua presença digital, organizar processos e fazer seu negócio evoluir.";
   }
 
+  function showLogo() {
+    scatterParticles();
+    hideAll();
+
+    logoEl.classList.remove(
+      "is-hidden"
+    );
+  }
+
   function applyScene(index) {
     const scene =
       scenes[index];
 
-    if (
-      scene.type === "particle"
-    ) {
+    if (scene.type === "particle") {
       showHello();
     }
 
-    if (
-      scene.type === "title"
-    ) {
+    if (scene.type === "title") {
       showTitle();
     }
 
-    if (
-      scene.type === "description"
-    ) {
+    if (scene.type === "description") {
       showDescription();
+    }
+
+    if (scene.type === "logo") {
+      showLogo();
     }
 
     nextChangeAt =
@@ -353,27 +388,22 @@
 
   function resizeCanvas() {
     const rect =
-      canvas.parentElement
-        .getBoundingClientRect();
+      stage.getBoundingClientRect();
 
-    width =
-      Math.round(
-        Math.min(
-          Math.max(
-            rect.width,
-            320
-          ),
-          1100
-        )
-      );
+    width = Math.max(
+      1,
+      Math.round(rect.width)
+    );
 
-    height =
-      window.innerWidth <= 768
-        ? 300
-        : 350;
+    height = Math.max(
+      1,
+      Math.round(rect.height)
+    );
 
-    const ratio =
-      window.devicePixelRatio || 1;
+    const ratio = Math.min(
+      window.devicePixelRatio || 1,
+      2
+    );
 
     canvas.width =
       Math.round(
@@ -406,6 +436,16 @@
     ) {
       showHello();
     }
+  }
+
+  function scheduleResize() {
+    clearTimeout(resizeTimer);
+
+    resizeTimer =
+      setTimeout(
+        resizeCanvas,
+        120
+      );
   }
 
   function animate(time) {
@@ -443,19 +483,20 @@
       );
   }
 
+  const resizeObserver =
+    typeof ResizeObserver !== "undefined"
+      ? new ResizeObserver(
+          scheduleResize
+        )
+      : null;
+
+  if (resizeObserver) {
+    resizeObserver.observe(stage);
+  }
+
   window.addEventListener(
     "resize",
-    () => {
-      clearTimeout(
-        resizeTimer
-      );
-
-      resizeTimer =
-        setTimeout(
-          resizeCanvas,
-          180
-        );
-    }
+    scheduleResize
   );
 
   resizeCanvas();
@@ -473,6 +514,10 @@
         cancelAnimationFrame(
           animationFrame
         );
+      }
+
+      if (resizeObserver) {
+        resizeObserver.disconnect();
       }
     }
   );
