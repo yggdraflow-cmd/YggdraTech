@@ -1709,3 +1709,136 @@
     justify-content: center;
   }
 }
+
+
+/* ===== HERO ROTATIVO RESPONSIVO YGGDRA ===== */
+
+.prismo-particle-stage {
+  position: relative;
+
+  width: 100%;
+  max-width: 1100px;
+
+  height: clamp(280px, 31vw, 360px);
+  min-height: 0;
+
+  margin: -25px auto -32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: visible;
+}
+
+#yggdra-particle-text {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  max-width: none;
+  height: 100%;
+
+  background: transparent;
+  pointer-events: none;
+}
+
+.prismo-hero-copy {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  max-width: 1040px;
+  height: 100%;
+  min-height: 0;
+
+  margin: auto;
+
+  padding: 0 clamp(8px, 3vw, 32px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.prismo-particle-stage .prismo-home-title {
+  width: 100%;
+  max-width: 980px;
+
+  margin: 0 auto;
+
+  font-size: clamp(2.8rem, 6.4vw, 5.4rem);
+  line-height: 1.02;
+}
+
+#yggdra-hero-description.prismo-home-description {
+  width: 100%;
+
+  max-width: 900px !important;
+
+  margin: 0 auto !important;
+
+  font-size: clamp(17px, 2vw, 24px) !important;
+  line-height: 1.6 !important;
+}
+
+.prismo-hero-logo {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: min(78%, 470px);
+  max-height: 86%;
+
+  margin: auto;
+
+  object-fit: contain;
+  object-position: center;
+
+  pointer-events: none;
+}
+
+.prismo-hero-copy.is-hidden,
+#yggdra-particle-text.is-hidden,
+.prismo-home-title.is-hidden,
+.prismo-home-description.is-hidden,
+.prismo-hero-logo.is-hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .prismo-particle-stage {
+    height: clamp(260px, 72vw, 310px);
+    min-height: 0;
+
+    margin: -15px auto -20px;
+  }
+
+  .prismo-particle-stage .prismo-home-title {
+    max-width: 96%;
+
+    font-size: clamp(2.15rem, 10.5vw, 3.4rem);
+    line-height: 1.03;
+  }
+
+  #yggdra-hero-description.prismo-home-description {
+    max-width: 94% !important;
+
+    font-size: clamp(15px, 4.4vw, 18px) !important;
+    line-height: 1.55 !important;
+  }
+
+  .prismo-hero-logo {
+    max-width: 82%;
+    max-height: 82%;
+  }
+}
