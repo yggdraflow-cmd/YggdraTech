@@ -2366,3 +2366,109 @@ footer,
     border-radius: 16px;
   }
 }
+
+/* =========================================================
+   TRANSIÇÃO GLOBAL YGGDRA TECH
+========================================================= */
+
+.yggdra-page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    opacity 0.45s ease,
+    visibility 0.45s ease;
+}
+
+.yggdra-page-transition.is-finished {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.yggdra-transition-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 24px;
+
+  color: #081120;
+
+  font-family: "Inter", sans-serif;
+  font-size: clamp(42px, 6vw, 78px);
+  font-weight: 300;
+  line-height: 1;
+
+  letter-spacing: -0.05em;
+}
+
+.yggdra-transition-word {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 2.6em;
+
+  overflow: hidden;
+
+  padding: 8px 18px;
+
+  border-radius: 14px;
+
+  background: #12b8d6;
+  color: #ffffff;
+}
+
+.yggdra-transition-word-current {
+  display: block;
+
+  transform: translateY(0);
+  opacity: 1;
+
+  transition:
+    transform 0.26s ease,
+    opacity 0.26s ease;
+}
+
+.yggdra-transition-word-current.is-leaving {
+  transform: translateY(-125%);
+  opacity: 0;
+}
+
+.yggdra-transition-word-current.is-entering {
+  transform: translateY(125%);
+  opacity: 0;
+}
+
+@media (max-width: 640px) {
+  .yggdra-transition-brand {
+    gap: 10px;
+    padding: 18px;
+    font-size: clamp(38px, 12vw, 56px);
+  }
+
+  .yggdra-transition-word {
+    padding: 7px 14px;
+    border-radius: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .yggdra-page-transition,
+  .yggdra-transition-word-current {
+    transition: none;
+  }
+}

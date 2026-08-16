@@ -1842,3 +1842,232 @@
     max-height: 82%;
   }
 }
+
+/* ===== YGGDRAFLOW HOME PRESENTATION ===== */
+
+.flow-presentation {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.flow-presentation-container {
+  width: min(100% - 40px, 1180px);
+  margin: 0 auto;
+}
+
+.flow-presentation-content {
+  max-width: 980px;
+}
+
+.flow-presentation-wide {
+  max-width: 1040px;
+}
+
+.flow-presentation-hero {
+  min-height: 92vh;
+  background: #f7f7f5;
+  color: #081120;
+}
+
+.flow-presentation-light {
+  min-height: 88vh;
+  background: #ffffff;
+  color: #081120;
+}
+
+.flow-presentation-dark {
+  min-height: 88vh;
+  background: #081120;
+  color: #ffffff;
+  border-bottom-color: #081120;
+}
+
+.flow-presentation-final {
+  min-height: 88vh;
+  background: #f7f7f5;
+  color: #081120;
+}
+
+.flow-presentation-hero .flow-presentation-container,
+.flow-presentation-light .flow-presentation-container,
+.flow-presentation-dark .flow-presentation-container,
+.flow-presentation-final .flow-presentation-container {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.flow-presentation-badge {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 30px;
+  padding: 10px 16px;
+  border: 1px solid #bcecf4;
+  border-radius: 999px;
+  background: #dff8fc;
+  color: #087f95;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.flow-display-title,
+.flow-section-title {
+  margin: 0;
+  color: inherit;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+}
+
+.flow-display-title {
+  max-width: 1000px;
+  font-size: clamp(4rem, 8vw, 7.1rem);
+  line-height: 0.92;
+}
+
+.flow-highlight-title {
+  width: fit-content;
+  margin-top: 24px;
+  padding: 12px 22px 14px;
+  border-radius: 18px;
+  background: #12b8d6;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(2.5rem, 5.5vw, 5.2rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.flow-presentation-description,
+.flow-section-description {
+  max-width: 790px;
+  margin: 40px 0 0;
+  color: #64748b;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1rem, 1.7vw, 1.45rem);
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+.flow-explore-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 48px;
+  color: #94a3b8;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.flow-explore-link:hover {
+  color: #081120;
+  transform: translateY(2px);
+}
+
+.flow-section-kicker {
+  margin: 0 0 28px;
+  color: #12b8d6;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.flow-section-kicker-light {
+  color: #5bd7eb;
+}
+
+.flow-section-title {
+  font-size: clamp(3.2rem, 7vw, 6.2rem);
+  line-height: 0.96;
+}
+
+.flow-section-title-light {
+  color: #ffffff;
+}
+
+.flow-section-description-dark {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.flow-catalog-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 48px;
+  padding: 16px 26px;
+  border-radius: 999px;
+  background: #12b8d6;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.flow-catalog-button:hover {
+  background: #087f95;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(18, 184, 214, 0.24);
+}
+
+@media (max-width: 768px) {
+  .flow-presentation-container {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .flow-presentation-hero,
+  .flow-presentation-light,
+  .flow-presentation-dark,
+  .flow-presentation-final {
+    min-height: auto;
+  }
+
+  .flow-presentation-hero .flow-presentation-container,
+  .flow-presentation-light .flow-presentation-container,
+  .flow-presentation-dark .flow-presentation-container,
+  .flow-presentation-final .flow-presentation-container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .flow-display-title {
+    font-size: clamp(3.2rem, 15vw, 5rem);
+  }
+
+  .flow-highlight-title {
+    padding: 10px 16px 12px;
+    border-radius: 14px;
+    font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+
+  .flow-section-title {
+    font-size: clamp(2.8rem, 13vw, 4.5rem);
+  }
+
+  .flow-presentation-description,
+  .flow-section-description {
+    margin-top: 30px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+}
