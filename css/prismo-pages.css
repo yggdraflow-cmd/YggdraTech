@@ -1492,3 +1492,236 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ===== YGGDRATECH ABOUT PUBLIC ===== */
+
+.yggdratech-about {
+  background: #ffffff;
+  color: #081120;
+}
+
+.yggdratech-about-container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.yggdratech-about-hero {
+  padding: 150px 20px 100px;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(18, 184, 214, 0.12),
+      transparent 34%
+    ),
+    #ffffff;
+}
+
+.yggdratech-about-kicker {
+  margin: 0 0 18px;
+  color: #087f95;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.yggdratech-about-hero h1 {
+  max-width: 920px;
+  margin: 0 auto;
+  color: #081120;
+  font-size: clamp(3rem, 7vw, 6.4rem);
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -0.065em;
+}
+
+.yggdratech-about-description {
+  max-width: 790px;
+  margin: 32px auto 0;
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.yggdratech-about-team {
+  padding: 30px 20px 120px;
+}
+
+.yggdratech-about-members {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.yggdratech-about-member {
+  overflow: hidden;
+  background: #f8fafb;
+  border: 1px solid #e8edf0;
+  border-radius: 28px;
+}
+
+.yggdratech-about-member-photo {
+  aspect-ratio: 4 / 4.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #edf3f5;
+  color: #081120;
+  font-size: 72px;
+  font-weight: 800;
+}
+
+.yggdratech-about-member-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.yggdratech-about-member-body {
+  padding: 30px;
+}
+
+.yggdratech-about-member-body h2 {
+  margin: 0;
+  color: #081120;
+  font-size: 28px;
+  letter-spacing: -0.04em;
+}
+
+.yggdratech-about-member-role {
+  margin: 8px 0 0;
+  color: #087f95;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.yggdratech-about-member-summary {
+  margin: 18px 0 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.yggdratech-about-biographies {
+  padding: 120px 20px;
+  background: #f7f7f5;
+}
+
+.yggdratech-about-biography {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+  gap: 80px;
+  align-items: center;
+}
+
+.yggdratech-about-biography + .yggdratech-about-biography {
+  margin-top: 130px;
+}
+
+.yggdratech-about-biography.is-reverse {
+  grid-template-columns: minmax(0, 1.14fr) minmax(0, 0.86fr);
+}
+
+.yggdratech-about-biography.is-reverse
+.yggdratech-about-biography-photo {
+  order: 2;
+}
+
+.yggdratech-about-biography.is-reverse
+.yggdratech-about-biography-copy {
+  order: 1;
+}
+
+.yggdratech-about-biography-photo {
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: #e8eef0;
+  border-radius: 28px;
+}
+
+.yggdratech-about-biography-photo:empty {
+  display: none;
+}
+
+.yggdratech-about-biography-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.yggdratech-about-biography-copy h2 {
+  margin: 0;
+  color: #081120;
+  font-size: clamp(2.7rem, 5vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.yggdratech-about-biography-role {
+  margin: 18px 0 0;
+  color: #087f95;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.yggdratech-about-biography-text {
+  margin: 28px 0 0;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.yggdratech-about-status {
+  padding: 70px 20px;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.yggdratech-about-error {
+  color: #b42318;
+}
+
+@media (max-width: 800px) {
+  .yggdratech-about-hero {
+    padding: 120px 16px 70px;
+  }
+
+  .yggdratech-about-container {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .yggdratech-about-members {
+    grid-template-columns: 1fr;
+  }
+
+  .yggdratech-about-team {
+    padding: 20px 0 80px;
+  }
+
+  .yggdratech-about-biographies {
+    padding: 80px 0;
+  }
+
+  .yggdratech-about-biography,
+  .yggdratech-about-biography.is-reverse {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .yggdratech-about-biography.is-reverse
+  .yggdratech-about-biography-photo,
+  .yggdratech-about-biography.is-reverse
+  .yggdratech-about-biography-copy {
+    order: initial;
+  }
+
+  .yggdratech-about-biography + .yggdratech-about-biography {
+    margin-top: 90px;
+  }
+}
