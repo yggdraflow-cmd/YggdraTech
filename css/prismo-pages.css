@@ -1527,13 +1527,13 @@
 }
 
 .yggdratech-about-hero h1 {
-  max-width: 920px;
+  max-width: 860px;
   margin: 0 auto;
   color: #081120;
-  font-size: clamp(3rem, 7vw, 6.4rem);
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
   font-weight: 700;
-  line-height: 0.96;
-  letter-spacing: -0.065em;
+  line-height: 1.02;
+  letter-spacing: -0.055em;
 }
 
 .yggdratech-about-description {
@@ -1562,13 +1562,16 @@
 }
 
 .yggdratech-about-member-photo {
+  width: min(82%, 360px);
   aspect-ratio: 4 / 4.4;
+  margin: 28px auto 0;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   background: #edf3f5;
   color: #081120;
+  border-radius: 24px;
   font-size: 72px;
   font-weight: 800;
 }
@@ -1636,8 +1639,10 @@
 }
 
 .yggdratech-about-biography-photo {
+  width: min(100%, 380px);
   overflow: hidden;
   aspect-ratio: 4 / 5;
+  justify-self: center;
   background: #e8eef0;
   border-radius: 28px;
 }
@@ -1688,6 +1693,15 @@
 }
 
 @media (max-width: 800px) {
+  .yggdratech-about-member-photo {
+    width: min(78%, 320px);
+    margin-top: 22px;
+  }
+
+  .yggdratech-about-biography-photo {
+    width: min(86%, 340px);
+  }
+
   .yggdratech-about-hero {
     padding: 120px 16px 70px;
   }
