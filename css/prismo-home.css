@@ -1719,7 +1719,7 @@
   width: 100%;
   max-width: 1100px;
 
-  height: clamp(280px, 31vw, 360px);
+  height: clamp(360px, 38vw, 480px);
   min-height: 0;
 
   margin: -25px auto -32px;
@@ -1768,12 +1768,13 @@
 
 .prismo-particle-stage .prismo-home-title {
   width: 100%;
-  max-width: 980px;
+  max-width: 960px;
 
   margin: 0 auto;
 
-  font-size: clamp(2.8rem, 6.4vw, 5.4rem);
-  line-height: 1.02;
+  font-size: clamp(2.4rem, 4.6vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -0.05em;
 }
 
 #yggdra-hero-description.prismo-home-description {
@@ -1817,17 +1818,18 @@
 
 @media (max-width: 768px) {
   .prismo-particle-stage {
-    height: clamp(260px, 72vw, 310px);
+    height: clamp(340px, 92vw, 420px);
     min-height: 0;
 
     margin: -15px auto -20px;
   }
 
   .prismo-particle-stage .prismo-home-title {
-    max-width: 96%;
+    max-width: 94%;
 
-    font-size: clamp(2.15rem, 10.5vw, 3.4rem);
-    line-height: 1.03;
+    font-size: clamp(1.9rem, 8vw, 2.8rem);
+    line-height: 1.08;
+    letter-spacing: -0.045em;
   }
 
   #yggdra-hero-description.prismo-home-description {
@@ -1927,7 +1929,7 @@
 
 .flow-display-title {
   max-width: 1000px;
-  font-size: clamp(4rem, 8vw, 7.1rem);
+  font-size: clamp(3rem, 6vw, 5.2rem);
   line-height: 0.92;
 }
 
@@ -1939,7 +1941,7 @@
   background: #12b8d6;
   color: #ffffff;
   font-family: "Inter", sans-serif;
-  font-size: clamp(2.5rem, 5.5vw, 5.2rem);
+  font-size: clamp(2rem, 4.2vw, 3.8rem);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.055em;
@@ -1993,7 +1995,7 @@
 }
 
 .flow-section-title {
-  font-size: clamp(3.2rem, 7vw, 6.2rem);
+  font-size: clamp(2.7rem, 5.4vw, 4.8rem);
   line-height: 0.96;
 }
 
@@ -2051,17 +2053,17 @@
   }
 
   .flow-display-title {
-    font-size: clamp(3.2rem, 15vw, 5rem);
+    font-size: clamp(2.35rem, 10vw, 3.6rem);
   }
 
   .flow-highlight-title {
     padding: 10px 16px 12px;
     border-radius: 14px;
-    font-size: clamp(2rem, 10vw, 3.5rem);
+    font-size: clamp(1.65rem, 7.5vw, 2.6rem);
   }
 
   .flow-section-title {
-    font-size: clamp(2.8rem, 13vw, 4.5rem);
+    font-size: clamp(2.1rem, 9vw, 3.2rem);
   }
 
   .flow-presentation-description,
@@ -2069,5 +2071,78 @@
     margin-top: 30px;
     font-size: 1.05rem;
     line-height: 1.7;
+  }
+}
+
+
+/* ===== YGGDRAFLOW HOME BLOCK REVEAL ===== */
+
+.home-block-reveal {
+  position: relative;
+  overflow: hidden;
+}
+
+.home-block-reveal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  background: var(--home-reveal-color, #12b8d6);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.home-block-reveal.home-reveal-pending {
+  color: transparent;
+}
+
+.home-block-reveal.home-reveal-pending > * {
+  visibility: hidden;
+}
+
+.home-block-reveal.home-reveal-running::after {
+  animation: home-block-reveal 0.9s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+.home-block-reveal.home-reveal-content-visible {
+  color: inherit;
+}
+
+.home-block-reveal.home-reveal-content-visible > * {
+  visibility: visible;
+}
+
+@keyframes home-block-reveal {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+
+  48% {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+
+  52% {
+    transform: scaleX(1);
+    transform-origin: right center;
+  }
+
+  100% {
+    transform: scaleX(0);
+    transform-origin: right center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-block-reveal,
+  .home-block-reveal > * {
+    visibility: visible !important;
+    color: inherit !important;
+  }
+
+  .home-block-reveal::after {
+    display: none;
   }
 }
