@@ -91,31 +91,51 @@
 
         <div class="flow-presentation-content">
 
-          <div class="flow-presentation-badge">
+          <div
+            class="flow-presentation-badge home-block-reveal"
+            data-home-reveal
+            data-home-reveal-color="#12b8d6"
+          >
             <i class="fa-solid fa-sparkles"></i>
-            YggdraFlow para você
+            <span id="home-flow-badge">YggdraFlow para você</span>
           </div>
 
-          <h2 class="flow-display-title">
+          <h2
+            id="home-flow-title"
+            class="flow-display-title home-block-reveal"
+            data-home-reveal
+            data-home-reveal-color="#081120"
+            data-home-reveal-delay="80"
+          >
             Não escolha
             <br>
             no escuro.
           </h2>
 
-          <div class="flow-highlight-title">
+          <div
+            id="home-flow-highlight"
+            class="flow-highlight-title home-block-reveal"
+            data-home-reveal
+            data-home-reveal-color="#12b8d6"
+            data-home-reveal-delay="120"
+          >
             Encontre o lugar certo.
           </div>
 
-          <p class="flow-presentation-description">
+          <p
+            id="home-flow-description"
+            class="flow-presentation-description"
+          >
             Descubra empresas, compare serviços e escolha onde quer ser
             atendido antes mesmo de fazer o agendamento.
           </p>
 
           <a
+            id="home-flow-explore"
             href="#escolha-com-clareza"
             class="flow-explore-link"
           >
-            Continue explorando
+            <span id="home-flow-explore-label">Continue explorando</span>
             <i class="fa-solid fa-chevron-down"></i>
           </a>
 
@@ -135,17 +155,31 @@
 
         <div class="flow-presentation-content flow-presentation-wide">
 
-          <p class="flow-section-kicker">
+          <p
+            id="home-clarity-kicker"
+            class="flow-section-kicker home-block-reveal"
+            data-home-reveal
+            data-home-reveal-color="#12b8d6"
+          >
             Escolha com mais clareza
           </p>
 
-          <h2 class="flow-section-title">
+          <h2
+            id="home-clarity-title"
+            class="flow-section-title home-block-reveal"
+            data-home-reveal
+            data-home-reveal-color="#081120"
+            data-home-reveal-delay="80"
+          >
             Tudo começa
             <br>
             com uma boa escolha.
           </h2>
 
-          <p class="flow-section-description">
+          <p
+            id="home-clarity-description"
+            class="flow-section-description"
+          >
             Veja quem está disponível, conheça os serviços oferecidos
             e compare opções antes de decidir onde será seu próximo
             atendimento.
@@ -164,11 +198,22 @@
 
         <div class="flow-presentation-content">
 
-          <p class="flow-section-kicker flow-section-kicker-light">
+          <p
+            id="home-information-kicker"
+            class="flow-section-kicker flow-section-kicker-light home-block-reveal"
+            data-home-reveal
+            data-home-reveal-color="#12b8d6"
+          >
             Tudo antes de agendar
           </p>
 
-          <h2 class="flow-section-title flow-section-title-light">
+          <h2
+            id="home-information-title"
+            class="flow-section-title flow-section-title-light home-block-reveal"
+            data-home-reveal
+            data-home-reveal-color="#12b8d6"
+            data-home-reveal-delay="80"
+          >
             Serviços.
             <br>
             Valores.
@@ -176,7 +221,10 @@
             Tempo.
           </h2>
 
-          <p class="flow-section-description flow-section-description-dark">
+          <p
+            id="home-information-description"
+            class="flow-section-description flow-section-description-dark"
+          >
             Informação para você decidir com calma e ir direto ao que
             interessa.
           </p>
@@ -194,24 +242,33 @@
 
         <div class="flow-presentation-content">
 
-          <h2 class="flow-section-title">
+          <h2
+            id="home-final-title"
+            class="flow-section-title home-block-reveal"
+            data-home-reveal
+            data-home-reveal-color="#081120"
+          >
             Menos conversa.
             <br>
             Mais clareza.
           </h2>
 
-          <p class="flow-section-description">
+          <p
+            id="home-final-description"
+            class="flow-section-description"
+          >
             Escolha a empresa, conheça os serviços e siga para o
             agendamento. Sem depender de uma sequência interminável de
             mensagens para descobrir horário, preço ou duração.
           </p>
 
           <a
+            id="home-final-button"
             href="#"
             data-yggdraflow-path="/empresas"
             class="flow-catalog-button"
           >
-            Ver empresas
+            <span id="home-final-button-label">Ver empresas</span>
             <i class="fa-solid fa-arrow-right"></i>
           </a>
 
@@ -226,7 +283,7 @@
 
   <section class="about-social-section">
 
-    <h2>
+    <h2 id="home-social-title">
       Siga-nos nas redes sociais
     </h2>
 
@@ -284,7 +341,7 @@
 
   <footer class="footer">
 
-    <p>
+    <p id="home-footer-text">
       &copy; 2026 Yggdra Tech. Todos os direitos reservados.
     </p>
 
@@ -303,7 +360,7 @@
 
           <i class="fas fa-robot"></i>
 
-          Yggdra Bot
+          <span id="home-chatbot-title">Yggdra Bot</span>
 
         </span>
 
@@ -327,6 +384,7 @@
           type="text"
           id="chatbot-input"
           placeholder="Digite sua mensagem..."
+          data-home-chatbot-placeholder
           autocomplete="off"
         >
 
@@ -358,6 +416,7 @@
 
   <script src="./js/navbar.js"></script>
   <script src="./js/script.js"></script>
+  <script src="./js/home.js"></script>
   <script src="./js/particle-text.js"></script>
 
 </body>
