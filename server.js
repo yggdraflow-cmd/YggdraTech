@@ -9,6 +9,10 @@ const YGGDRAFLOW_APP_URL = String(
   process.env.YGGDRAFLOW_APP_URL || "http://localhost:5173"
 ).replace(/\/+$/, "");
 
+const YGGDRAFLOW_API_URL = String(
+  process.env.YGGDRAFLOW_API_URL || "http://localhost:3333"
+).replace(/\/+$/, "");
+
 app.use(express.json());
 
 app.use((req, res, next) => {
@@ -19,6 +23,7 @@ app.use((req, res, next) => {
 app.get("/api/config", (req, res) => {
   res.json({
     yggdraflowAppUrl: YGGDRAFLOW_APP_URL,
+    yggdraflowApiUrl: YGGDRAFLOW_API_URL,
   });
 });
 

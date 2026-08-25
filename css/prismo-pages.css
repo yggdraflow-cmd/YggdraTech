@@ -1492,3 +1492,618 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ===== YGGDRATECH ABOUT PUBLIC ===== */
+
+.yggdratech-about {
+  background: #ffffff;
+  color: #081120;
+}
+
+.yggdratech-about-container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.yggdratech-about-hero {
+  padding: 150px 20px 100px;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(18, 184, 214, 0.12),
+      transparent 34%
+    ),
+    #ffffff;
+}
+
+.yggdratech-about-kicker {
+  margin: 0 0 18px;
+  color: #087f95;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.yggdratech-about-hero h1 {
+  max-width: 860px;
+  margin: 0 auto;
+  color: #081120;
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+}
+
+.yggdratech-about-description {
+  max-width: 790px;
+  margin: 32px auto 0;
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.yggdratech-about-team {
+  padding: 30px 20px 120px;
+}
+
+.yggdratech-about-members {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.yggdratech-about-member {
+  overflow: hidden;
+  background: #f8fafb;
+  border: 1px solid #e8edf0;
+  border-radius: 28px;
+}
+
+.yggdratech-about-member-photo {
+  width: min(82%, 360px);
+  aspect-ratio: 4 / 4.4;
+  margin: 28px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #edf3f5;
+  color: #081120;
+  border-radius: 24px;
+  font-size: 72px;
+  font-weight: 800;
+}
+
+.yggdratech-about-member-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.yggdratech-about-member-body {
+  padding: 30px;
+}
+
+.yggdratech-about-member-body h2 {
+  margin: 0;
+  color: #081120;
+  font-size: 28px;
+  letter-spacing: -0.04em;
+}
+
+.yggdratech-about-member-role {
+  margin: 8px 0 0;
+  color: #087f95;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.yggdratech-about-member-summary {
+  margin: 18px 0 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.yggdratech-about-biographies {
+  padding: 120px 20px;
+  background: #f7f7f5;
+}
+
+.yggdratech-about-biography {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+  gap: 80px;
+  align-items: center;
+}
+
+.yggdratech-about-biography + .yggdratech-about-biography {
+  margin-top: 130px;
+}
+
+.yggdratech-about-biography.is-reverse {
+  grid-template-columns: minmax(0, 1.14fr) minmax(0, 0.86fr);
+}
+
+.yggdratech-about-biography.is-reverse
+.yggdratech-about-biography-photo {
+  order: 2;
+}
+
+.yggdratech-about-biography.is-reverse
+.yggdratech-about-biography-copy {
+  order: 1;
+}
+
+.yggdratech-about-biography-photo {
+  width: min(100%, 380px);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  justify-self: center;
+  background: #e8eef0;
+  border-radius: 28px;
+}
+
+.yggdratech-about-biography-photo:empty {
+  display: none;
+}
+
+.yggdratech-about-biography-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.yggdratech-about-biography-copy h2 {
+  margin: 0;
+  color: #081120;
+  font-size: clamp(2.7rem, 5vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.yggdratech-about-biography-role {
+  margin: 18px 0 0;
+  color: #087f95;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.yggdratech-about-biography-text {
+  margin: 28px 0 0;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.yggdratech-about-status {
+  padding: 70px 20px;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.yggdratech-about-error {
+  color: #b42318;
+}
+
+@media (max-width: 800px) {
+  .yggdratech-about-member-photo {
+    width: min(78%, 320px);
+    margin-top: 22px;
+  }
+
+  .yggdratech-about-biography-photo {
+    width: min(86%, 340px);
+  }
+
+  .yggdratech-about-hero {
+    padding: 120px 16px 70px;
+  }
+
+  .yggdratech-about-container {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .yggdratech-about-members {
+    grid-template-columns: 1fr;
+  }
+
+  .yggdratech-about-team {
+    padding: 20px 0 80px;
+  }
+
+  .yggdratech-about-biographies {
+    padding: 80px 0;
+  }
+
+  .yggdratech-about-biography,
+  .yggdratech-about-biography.is-reverse {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .yggdratech-about-biography.is-reverse
+  .yggdratech-about-biography-photo,
+  .yggdratech-about-biography.is-reverse
+  .yggdratech-about-biography-copy {
+    order: initial;
+  }
+
+  .yggdratech-about-biography + .yggdratech-about-biography {
+    margin-top: 90px;
+  }
+}
+
+
+/* ===== YGGDRATECH SERVICES PUBLIC ===== */
+
+.yggdratech-services-public {
+  background: #ffffff;
+  color: #081120;
+}
+
+.yggdratech-services-container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.yggdratech-services-hero {
+  padding: 150px 20px 95px;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(18, 184, 214, 0.12),
+      transparent 34%
+    ),
+    #ffffff;
+}
+
+.yggdratech-services-kicker {
+  margin: 0 0 18px;
+  color: #087f95;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.yggdratech-services-hero h1 {
+  max-width: 820px;
+  margin: 0 auto;
+  color: #081120;
+  font-size: clamp(2rem, 3.6vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.yggdratech-services-message {
+  max-width: 780px;
+  margin: 30px auto 0;
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.yggdratech-services-list {
+  padding: 20px 20px 130px;
+}
+
+.yggdratech-services-grid {
+  display: grid;
+  gap: 34px;
+}
+
+.yggdratech-service-card {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(0, 0.95fr);
+  min-height: 470px;
+  overflow: hidden;
+  border: 1px solid #e8edf0;
+  border-radius: 30px;
+  background: #f8fafb;
+  box-shadow:
+    0 18px 50px rgba(8, 17, 32, 0.055);
+}
+
+.yggdratech-service-card:nth-child(even) {
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(0, 1.05fr);
+}
+
+.yggdratech-service-card:nth-child(even)
+.yggdratech-service-media {
+  order: 2;
+}
+
+.yggdratech-service-card:nth-child(even)
+.yggdratech-service-body {
+  order: 1;
+}
+
+.yggdratech-service-media {
+  min-height: 470px;
+  overflow: hidden;
+  background: #e9eff2;
+}
+
+.yggdratech-service-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 470px;
+  display: block;
+  object-fit: cover;
+}
+
+.yggdratech-service-media-fallback {
+  width: 100%;
+  height: 100%;
+  min-height: 470px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #087f95;
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(18, 184, 214, 0.16),
+      transparent 32%
+    ),
+    #edf3f5;
+  font-size: 52px;
+}
+
+.yggdratech-service-body {
+  padding: 54px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.yggdratech-service-number {
+  color: #087f95;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.yggdratech-service-body h2 {
+  margin: 16px 0 0;
+  color: #081120;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.yggdratech-service-description {
+  margin: 24px 0 0;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.yggdratech-service-offer {
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid #e0e7ea;
+}
+
+.yggdratech-service-offer strong {
+  display: block;
+  color: #081120;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.yggdratech-service-offer p {
+  margin: 10px 0 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.yggdratech-service-link {
+  width: fit-content;
+  margin-top: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 18px;
+  color: #ffffff;
+  background: #081120;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+.yggdratech-service-link:hover {
+  color: #ffffff;
+  background: #087f95;
+  transform: translateY(-2px);
+}
+
+.yggdratech-services-status {
+  padding: 70px 20px;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.yggdratech-services-error {
+  color: #b42318;
+}
+
+@media (max-width: 850px) {
+  .yggdratech-services-hero {
+    padding: 120px 16px 70px;
+  }
+
+  .yggdratech-services-container {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .yggdratech-services-list {
+    padding: 10px 0 90px;
+  }
+
+  .yggdratech-service-card,
+  .yggdratech-service-card:nth-child(even) {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .yggdratech-service-card:nth-child(even)
+  .yggdratech-service-media,
+  .yggdratech-service-card:nth-child(even)
+  .yggdratech-service-body {
+    order: initial;
+  }
+
+  .yggdratech-service-media,
+  .yggdratech-service-media img,
+  .yggdratech-service-media-fallback {
+    min-height: 280px;
+  }
+
+  .yggdratech-service-media {
+    aspect-ratio: 16 / 9;
+  }
+
+  .yggdratech-service-media img {
+    height: 100%;
+  }
+
+  .yggdratech-service-body {
+    padding: 32px 26px 36px;
+  }
+}
+
+
+/* ===== YGGDRATECH SERVICES MOBILE ===== */
+
+@media (max-width: 600px) {
+  .yggdratech-services-hero {
+    padding: 105px 14px 56px;
+  }
+
+  .yggdratech-services-container {
+    width: calc(100% - 24px);
+  }
+
+  .yggdratech-services-kicker {
+    margin-bottom: 14px;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+  }
+
+  .yggdratech-services-hero h1 {
+    max-width: 100%;
+    font-size: clamp(1.75rem, 8.5vw, 2.45rem);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+  }
+
+  .yggdratech-services-message {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .yggdratech-services-list {
+    padding: 0 0 72px;
+  }
+
+  .yggdratech-services-grid {
+    gap: 22px;
+  }
+
+  .yggdratech-service-card,
+  .yggdratech-service-card:nth-child(even) {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    border-radius: 22px;
+  }
+
+  .yggdratech-service-media,
+  .yggdratech-service-media img,
+  .yggdratech-service-media-fallback {
+    min-height: 0;
+  }
+
+  .yggdratech-service-media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .yggdratech-service-media img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .yggdratech-service-media-fallback {
+    height: 100%;
+    min-height: 200px;
+  }
+
+  .yggdratech-service-body {
+    min-width: 0;
+    padding: 25px 20px 28px;
+  }
+
+  .yggdratech-service-number {
+    font-size: 10px;
+  }
+
+  .yggdratech-service-body h2 {
+    margin-top: 12px;
+    font-size: clamp(1.7rem, 8vw, 2.15rem);
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+  }
+
+  .yggdratech-service-description {
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+
+  .yggdratech-service-offer {
+    margin-top: 24px;
+    padding-top: 20px;
+  }
+
+  .yggdratech-service-offer strong {
+    font-size: 12px;
+  }
+
+  .yggdratech-service-offer p {
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+
+  .yggdratech-service-link {
+    width: 100%;
+    margin-top: 24px;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}

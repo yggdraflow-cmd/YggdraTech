@@ -1,4 +1,4 @@
-(() => {
+(async () => {
   const stage = document.querySelector(
     ".prismo-particle-stage"
   );
@@ -34,6 +34,59 @@
     return;
   }
 
+  const introContent = {
+    hello: "Olá.",
+    title: "Transformamos ideias em",
+    highlight: "soluções digitais.",
+    description:
+      "Sites, sistemas, automações e integrações desenvolvidos para fortalecer sua presença digital, organizar processos e fazer seu negócio evoluir.",
+  };
+
+  try {
+    const configResponse = await fetch("/api/config", {
+      cache: "no-store",
+    });
+
+    if (configResponse.ok) {
+      const config = await configResponse.json();
+
+      const apiUrl = String(
+        config.yggdraflowApiUrl || "http://localhost:3333"
+      ).replace(/\/+$/, "");
+
+      const homeResponse = await fetch(
+        `${apiUrl}/public/yggdratech/home`,
+        {
+          cache: "no-store",
+        }
+      );
+
+      if (homeResponse.ok) {
+        const homeData = await homeResponse.json();
+        const intro = homeData?.content?.intro;
+
+        if (intro) {
+          introContent.hello =
+            intro.hello || introContent.hello;
+
+          introContent.title =
+            intro.title || introContent.title;
+
+          introContent.highlight =
+            intro.highlight || introContent.highlight;
+
+          introContent.description =
+            intro.description || introContent.description;
+        }
+      }
+    }
+  } catch (error) {
+    console.warn(
+      "Não foi possível carregar os textos do carrossel. Usando conteúdo padrão.",
+      error
+    );
+  }
+
   const ctx = canvas.getContext("2d");
 
   if (!ctx) {
@@ -43,15 +96,15 @@
   const scenes = [
     {
       type: "particle",
-      duration: 3000,
+      duration: 4000,
     },
     {
       type: "title",
-      duration: 3400,
+      duration: 4600,
     },
     {
       type: "description",
-      duration: 4200,
+      duration: 5400,
     },
     {
       type: "logo",
@@ -198,7 +251,7 @@
     bufferCtx.textBaseline = "middle";
 
     bufferCtx.fillText(
-      "Olá.",
+      introContent.hello,
       width / 2,
       height / 2
     );
@@ -331,10 +384,21 @@
       "is-hidden"
     );
 
-    titleEl.innerHTML = `
-      Transformamos ideias em
-      <span>soluções digitais.</span>
-    `;
+    titleEl.replaceChildren();
+
+    titleEl.append(
+      document.createTextNode(
+        `${introContent.title} `
+      )
+    );
+
+    const highlight =
+      document.createElement("span");
+
+    highlight.textContent =
+      introContent.highlight;
+
+    titleEl.append(highlight);
   }
 
   function showDescription() {
@@ -350,7 +414,7 @@
     );
 
     descriptionEl.textContent =
-      "Sites, sistemas, automações e integrações desenvolvidos para fortalecer sua presença digital, organizar processos e fazer seu negócio evoluir.";
+      introContent.description;
   }
 
   function showLogo() {

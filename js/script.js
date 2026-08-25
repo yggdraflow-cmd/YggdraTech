@@ -1,8 +1,65 @@
+initYggdraPageTransition();
+
 document.addEventListener("DOMContentLoaded", () => {
   initChatbot();
-  initLoader();
 });
 
+
+
+
+/* =========================================================
+   TRANSIÇÃO GLOBAL YGGDRA TECH
+========================================================= */
+
+function initYggdraPageTransition() {
+  const overlay = document.createElement("div");
+
+  overlay.className = "yggdra-page-transition";
+  overlay.setAttribute("aria-hidden", "true");
+
+  overlay.innerHTML = `
+    <div class="yggdra-transition-brand">
+      <span class="yggdra-transition-name">Yggdra</span>
+
+      <span class="yggdra-transition-word">
+        <span class="yggdra-transition-word-current">Tech</span>
+      </span>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  const currentWord =
+    overlay.querySelector(".yggdra-transition-word-current");
+
+  window.setTimeout(() => {
+    if (!currentWord) {
+      return;
+    }
+
+    currentWord.classList.add("is-leaving");
+
+    window.setTimeout(() => {
+      currentWord.textContent = "All";
+      currentWord.classList.remove("is-leaving");
+      currentWord.classList.add("is-entering");
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          currentWord.classList.remove("is-entering");
+        });
+      });
+    }, 260);
+  }, 900);
+
+  window.setTimeout(() => {
+    overlay.classList.add("is-finished");
+
+    window.setTimeout(() => {
+      overlay.remove();
+    }, 500);
+  }, 1900);
+}
 
 /* =========================================================
    CHATBOT - ABRIR, FECHAR E ENVIAR
